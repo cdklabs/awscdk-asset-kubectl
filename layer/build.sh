@@ -3,6 +3,8 @@ set -euo pipefail
 
 cd $(dirname $0)
 
+mkdir -p ../lib
+
 echo ">> Building AWS Lambda layer inside a docker image..."
 
 TAG='aws-lambda-layer'
