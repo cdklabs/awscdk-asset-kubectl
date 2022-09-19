@@ -3,7 +3,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amazon Web Services',
   cdkVersion: '2.0.0',
   defaultReleaseBranch: 'main',
-  name: '@aws-cdk/asset-kubectl-v1-20',
+  name: '@aws-cdk/asset-kubectl-v20',
   description: 'An Asset construct that contains kubectl, for use in Lambda Layers',
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
   homepage: 'https://github.com/cdklabs/aws-asset-awscli#readme',

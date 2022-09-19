@@ -1,5 +1,5 @@
 {
-  "name": "@aws-cdk/asset-kubectl-v1-20",
+  "name": "@aws-cdk/asset-kubectl-v20",
   "description": "An Asset construct that contains kubectl, for use in Lambda Layers",
   "repository": {
     "type": "git",
