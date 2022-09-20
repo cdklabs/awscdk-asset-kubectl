@@ -32,7 +32,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "kubectl-v20"
       },
       "steps": [
         {
@@ -217,6 +217,45 @@
       "steps": [
         {
           "spawn": "package:js"
+        },
+        {
+          "spawn": "package:java"
+        },
+        {
+          "spawn": "package:python"
+        },
+        {
+          "spawn": "package:dotnet"
+        },
+        {
+          "spawn": "package:go"
+        }
+      ]
+    },
+    "package:dotnet": {
+      "name": "package:dotnet",
+      "description": "Create dotnet language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target dotnet"
+        }
+      ]
+    },
+    "package:go": {
+      "name": "package:go",
+      "description": "Create go language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target go"
+        }
+      ]
+    },
+    "package:java": {
+      "name": "package:java",
+      "description": "Create java language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target java"
         }
       ]
     },
@@ -226,6 +265,15 @@
       "steps": [
         {
           "exec": "jsii-pacmak -v --target js"
+        }
+      ]
+    },
+    "package:python": {
+      "name": "package:python",
+      "description": "Create python language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target python"
         }
       ]
     },
@@ -251,11 +299,12 @@
         }
       ]
     },
-    "release": {
-      "name": "release",
-      "description": "Prepare a release from \"main\" branch",
+    "release:kubectl-v20/main": {
+      "name": "release:kubectl-v20/main",
+      "description": "Prepare a release from \"kubectl-v20/main\" branch",
       "env": {
-        "RELEASE": "true"
+        "RELEASE": "true",
+        "RELEASE_TAG_PREFIX": "kubectl-v20"
       },
       "steps": [
         {
@@ -316,7 +365,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": ""
+        "RELEASE_TAG_PREFIX": "kubectl-v20"
       },
       "steps": [
         {
