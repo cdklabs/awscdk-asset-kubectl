@@ -130,6 +130,78 @@
         }
       ]
     },
+    "integ:kubectl-asset:assert": {
+      "name": "integ:kubectl-asset:assert",
+      "description": "assert the snapshot of integration test 'kubectl-asset'",
+      "steps": [
+        {
+          "exec": "[ -d \"test/kubectl-asset.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'kubectl-asset'. Run 'projen integ:kubectl-asset:deploy' to capture.\" && exit 1)"
+        },
+        {
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/kubectl-asset.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/.tmp/kubectl-asset.integ/assert.cdk.out > /dev/null"
+        },
+        {
+          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/kubectl-asset.integ.snapshot/ test/.tmp/kubectl-asset.integ/assert.cdk.out/"
+        }
+      ]
+    },
+    "integ:kubectl-asset:deploy": {
+      "name": "integ:kubectl-asset:deploy",
+      "description": "deploy integration test 'kubectl-asset' and capture snapshot",
+      "steps": [
+        {
+          "exec": "rm -fr test/.tmp/kubectl-asset.integ/deploy.cdk.out"
+        },
+        {
+          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/kubectl-asset.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/.tmp/kubectl-asset.integ/deploy.cdk.out"
+        },
+        {
+          "exec": "rm -fr test/kubectl-asset.integ.snapshot"
+        },
+        {
+          "exec": "mv test/.tmp/kubectl-asset.integ/deploy.cdk.out test/kubectl-asset.integ.snapshot"
+        },
+        {
+          "spawn": "integ:kubectl-asset:destroy"
+        }
+      ]
+    },
+    "integ:kubectl-asset:destroy": {
+      "name": "integ:kubectl-asset:destroy",
+      "description": "destroy integration test 'kubectl-asset'",
+      "steps": [
+        {
+          "exec": "cdk destroy --app test/kubectl-asset.integ.snapshot '**' --no-version-reporting"
+        }
+      ]
+    },
+    "integ:kubectl-asset:snapshot": {
+      "name": "integ:kubectl-asset:snapshot",
+      "description": "update snapshot for integration test \"kubectl-asset\"",
+      "steps": [
+        {
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/kubectl-asset.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/kubectl-asset.integ.snapshot > /dev/null"
+        }
+      ]
+    },
+    "integ:kubectl-asset:watch": {
+      "name": "integ:kubectl-asset:watch",
+      "description": "watch integration test 'kubectl-asset' (without updating snapshots)",
+      "steps": [
+        {
+          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/kubectl-asset.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/.tmp/kubectl-asset.integ/deploy.cdk.out"
+        }
+      ]
+    },
+    "integ:snapshot-all": {
+      "name": "integ:snapshot-all",
+      "description": "update snapshot for all integration tests",
+      "steps": [
+        {
+          "spawn": "integ:kubectl-asset:snapshot"
+        }
+      ]
+    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package",
@@ -212,6 +284,9 @@
         },
         {
           "spawn": "eslint"
+        },
+        {
+          "spawn": "integ:kubectl-asset:assert"
         }
       ]
     },
