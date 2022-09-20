@@ -1,1 +1,1 @@
-export * from './kubectl-layer';
+export * from './kubectl-asset';
