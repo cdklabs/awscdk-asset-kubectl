@@ -15,7 +15,7 @@ This module exports a single class called `KubectlAsset` which is an `s3_assets.
 bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line.
 
-> - Helm Version: 3.5.4
+> - Helm Version: 3.8.1
 > - Kubectl Version: 1.20.0
 > 
 
