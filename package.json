@@ -1,5 +1,5 @@
 {
-  "name": "@aws-cdk/asset-kubectl-v20",
+  "name": "@aws-cdk/asset-kubectl-v21",
   "description": "An Asset construct that contains kubectl, for use in Lambda Layers",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
-    "release:kubectl-v20/main": "npx projen release:kubectl-v20/main",
+    "release:kubectl-v21/main": "npx projen release:kubectl-v21/main",
     "test": "npx projen test",
     "test:update": "npx projen test:update",
     "test:watch": "npx projen test:watch",
@@ -130,19 +130,19 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "software.amazon.awscdk.cdk.asset.kubectl.v20",
+        "package": "software.amazon.awscdk.cdk.asset.kubectl.v21",
         "maven": {
           "groupId": "software.amazon.awscdk",
-          "artifactId": "cdk-asset-kubectl-v20"
+          "artifactId": "cdk-asset-kubectl-v21"
         }
       },
       "python": {
-        "distName": "aws-cdk.asset-kubectl-v20",
-        "module": "aws_cdk.asset_kubectl_v20"
+        "distName": "aws-cdk.asset-kubectl-v21",
+        "module": "aws_cdk.asset_kubectl_v21"
       },
       "dotnet": {
-        "namespace": "Amazon.CDK.Asset.KubectlV20",
-        "packageId": "Amazon.CDK.Asset.KubectlV20"
+        "namespace": "Amazon.CDK.Asset.KubectlV21",
+        "packageId": "Amazon.CDK.Asset.KubectlV21"
       },
       "go": {
         "moduleName": "github.com/cdklabs/awscdk-asset-kubectl-go"
