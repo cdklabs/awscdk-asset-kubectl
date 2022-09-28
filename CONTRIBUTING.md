@@ -52,7 +52,11 @@ Asset in the issue.
 4. Specifically: 
     - change `README.md` to reflect the new versions of kubectl and helm that the asset will include.
     - change `KUBECTL_VERSION` and `HELM_VERSION` in `layer/Dockerfile` to reflect the new versions.
+    The `HELM_VERSION` you select should be the highest version compatible with the `KUBECTL_VERSION`
+    according to the helm [docs](https://helm.sh/docs/topics/version_skew/). For example, if
+    `KUBECTL_VERSION` is v1.20.x, then the `HELM_VERSION` should be v3.8.x.
     - change `SPEC_VERSION` in `.projenrc.js` to reflect the new minor version of kubectl.
+    For example, if `KUBECTL_VERSION` is v1.25.0, then `SPEC_VERSION` should be 25.
     - for an example of code changes done for kubectl v1.22.0, see this [PR](https://github.com/cdklabs/awscdk-asset-kubectl/pull/7).
 5. Run `npx projen` to update the github workflows.
 6. Run `yarn:integ:kubectl-asset:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
