@@ -146,7 +146,7 @@
       },
       "go": {
         "moduleName": "github.com/cdklabs/awscdk-asset-kubectl-go",
-        "packageName": "kubectlv20"
+        "packageName": "kubectlv21"
       }
     },
     "tsc": {
