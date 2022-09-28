@@ -45,6 +45,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   publishToGo: {
     moduleName: 'github.com/cdklabs/awscdk-asset-kubectl-go',
+    packageName: `kubectlv${SPEC_VERSION}`,
     gitBranch: `kubectl.${SPEC_VERSION}`,
     gitUserName: 'AWS CDK Team',
     gitUserEmail: 'aws-cdk@amazon.com',
