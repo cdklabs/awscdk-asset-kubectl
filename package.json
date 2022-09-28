@@ -145,7 +145,8 @@
         "packageId": "Amazon.CDK.Asset.KubectlV21"
       },
       "go": {
-        "moduleName": "github.com/cdklabs/awscdk-asset-kubectl-go"
+        "moduleName": "github.com/cdklabs/awscdk-asset-kubectl-go",
+        "packageName": "kubectlv20"
       }
     },
     "tsc": {
