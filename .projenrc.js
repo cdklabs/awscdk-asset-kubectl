@@ -2,7 +2,7 @@ const { awscdk, JsonPatch } = require('projen');
 const { NpmAccess } = require('projen/lib/javascript');
 
 // the version of k8s this branch supports
-const SPEC_VERSION = '20';
+const SPEC_VERSION = '22';
 const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 

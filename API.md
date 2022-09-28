@@ -2,39 +2,39 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### KubectlAsset <a name="KubectlAsset" id="@aws-cdk/asset-kubectl-v20.KubectlAsset"></a>
+### KubectlAsset <a name="KubectlAsset" id="@aws-cdk/asset-kubectl-v22.KubectlAsset"></a>
 
 A CDK Asset construct that contains `kubectl` and `helm`.
 
-#### Initializers <a name="Initializers" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.Initializer"></a>
+#### Initializers <a name="Initializers" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.Initializer"></a>
 
 ```typescript
-import { KubectlAsset } from '@aws-cdk/asset-kubectl-v20'
+import { KubectlAsset } from '@aws-cdk/asset-kubectl-v22'
 
 new KubectlAsset(scope: Construct, id: string, options?: AssetOptions)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.Initializer.parameter.options">options</a></code> | <code>aws-cdk-lib.aws_s3_assets.AssetOptions</code> | *No description.* |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.Initializer.parameter.options">options</a></code> | <code>aws-cdk-lib.aws_s3_assets.AssetOptions</code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `options`<sup>Optional</sup> <a name="options" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.Initializer.parameter.options"></a>
+##### `options`<sup>Optional</sup> <a name="options" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.Initializer.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.aws_s3_assets.AssetOptions
 
@@ -44,13 +44,13 @@ new KubectlAsset(scope: Construct, id: string, options?: AssetOptions)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.addResourceMetadata">addResourceMetadata</a></code> | Adds CloudFormation template metadata to the specified resource with information that indicates which resource property is mapped to this local asset. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.grantRead">grantRead</a></code> | Grants read permissions to the principal on the assets bucket. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.addResourceMetadata">addResourceMetadata</a></code> | Adds CloudFormation template metadata to the specified resource with information that indicates which resource property is mapped to this local asset. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.grantRead">grantRead</a></code> | Grants read permissions to the principal on the assets bucket. |
 
 ---
 
-##### `toString` <a name="toString" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.toString"></a>
+##### `toString` <a name="toString" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.toString"></a>
 
 ```typescript
 public toString(): string
@@ -58,7 +58,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addResourceMetadata` <a name="addResourceMetadata" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.addResourceMetadata"></a>
+##### `addResourceMetadata` <a name="addResourceMetadata" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.addResourceMetadata"></a>
 
 ```typescript
 public addResourceMetadata(resource: CfnResource, resourceProperty: string): void
@@ -75,7 +75,7 @@ behavior when synthesizing via the CDK Toolkit.
 
 > [https://github.com/aws/aws-cdk/issues/1432](https://github.com/aws/aws-cdk/issues/1432)
 
-###### `resource`<sup>Required</sup> <a name="resource" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.addResourceMetadata.parameter.resource"></a>
+###### `resource`<sup>Required</sup> <a name="resource" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.addResourceMetadata.parameter.resource"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -83,7 +83,7 @@ The CloudFormation resource which is using this asset [disable-awslint:ref-via-i
 
 ---
 
-###### `resourceProperty`<sup>Required</sup> <a name="resourceProperty" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.addResourceMetadata.parameter.resourceProperty"></a>
+###### `resourceProperty`<sup>Required</sup> <a name="resourceProperty" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.addResourceMetadata.parameter.resourceProperty"></a>
 
 - *Type:* string
 
@@ -91,7 +91,7 @@ The property name where this asset is referenced (e.g. "Code" for AWS::Lambda::F
 
 ---
 
-##### `grantRead` <a name="grantRead" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.grantRead"></a>
+##### `grantRead` <a name="grantRead" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.grantRead"></a>
 
 ```typescript
 public grantRead(grantee: IGrantable): void
@@ -99,7 +99,7 @@ public grantRead(grantee: IGrantable): void
 
 Grants read permissions to the principal on the assets bucket.
 
-###### `grantee`<sup>Required</sup> <a name="grantee" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.grantRead.parameter.grantee"></a>
+###### `grantee`<sup>Required</sup> <a name="grantee" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.grantRead.parameter.grantee"></a>
 
 - *Type:* aws-cdk-lib.aws_iam.IGrantable
 
@@ -109,21 +109,21 @@ Grants read permissions to the principal on the assets bucket.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.isConstruct"></a>
 
 ```typescript
-import { KubectlAsset } from '@aws-cdk/asset-kubectl-v20'
+import { KubectlAsset } from '@aws-cdk/asset-kubectl-v22'
 
 KubectlAsset.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -135,20 +135,20 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.assetHash">assetHash</a></code> | <code>string</code> | A hash of this asset, which is available at construction time. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.assetPath">assetPath</a></code> | <code>string</code> | The path to the asset, relative to the current Cloud Assembly. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | The S3 bucket in which this asset resides. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.httpUrl">httpUrl</a></code> | <code>string</code> | Attribute which represents the S3 HTTP URL of this asset. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.isFile">isFile</a></code> | <code>boolean</code> | Indicates if this asset is a single file. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.isZipArchive">isZipArchive</a></code> | <code>boolean</code> | Indicates if this asset is a zip archive. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.s3BucketName">s3BucketName</a></code> | <code>string</code> | Attribute that represents the name of the bucket this asset exists in. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.s3ObjectKey">s3ObjectKey</a></code> | <code>string</code> | Attribute which represents the S3 object key of this asset. |
-| <code><a href="#@aws-cdk/asset-kubectl-v20.KubectlAsset.property.s3ObjectUrl">s3ObjectUrl</a></code> | <code>string</code> | Attribute which represents the S3 URL of this asset. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.assetHash">assetHash</a></code> | <code>string</code> | A hash of this asset, which is available at construction time. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.assetPath">assetPath</a></code> | <code>string</code> | The path to the asset, relative to the current Cloud Assembly. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | The S3 bucket in which this asset resides. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.httpUrl">httpUrl</a></code> | <code>string</code> | Attribute which represents the S3 HTTP URL of this asset. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.isFile">isFile</a></code> | <code>boolean</code> | Indicates if this asset is a single file. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.isZipArchive">isZipArchive</a></code> | <code>boolean</code> | Indicates if this asset is a zip archive. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.s3BucketName">s3BucketName</a></code> | <code>string</code> | Attribute that represents the name of the bucket this asset exists in. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.s3ObjectKey">s3ObjectKey</a></code> | <code>string</code> | Attribute which represents the S3 object key of this asset. |
+| <code><a href="#@aws-cdk/asset-kubectl-v22.KubectlAsset.property.s3ObjectUrl">s3ObjectUrl</a></code> | <code>string</code> | Attribute which represents the S3 URL of this asset. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -160,7 +160,7 @@ The tree node.
 
 ---
 
-##### `assetHash`<sup>Required</sup> <a name="assetHash" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.assetHash"></a>
+##### `assetHash`<sup>Required</sup> <a name="assetHash" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.assetHash"></a>
 
 ```typescript
 public readonly assetHash: string;
@@ -176,7 +176,7 @@ hash has changed.
 
 ---
 
-##### `assetPath`<sup>Required</sup> <a name="assetPath" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.assetPath"></a>
+##### `assetPath`<sup>Required</sup> <a name="assetPath" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.assetPath"></a>
 
 ```typescript
 public readonly assetPath: string;
@@ -191,7 +191,7 @@ If asset staging is enabled it will be the staged path.
 
 ---
 
-##### `bucket`<sup>Required</sup> <a name="bucket" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.bucket"></a>
+##### `bucket`<sup>Required</sup> <a name="bucket" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.bucket"></a>
 
 ```typescript
 public readonly bucket: IBucket;
@@ -203,7 +203,7 @@ The S3 bucket in which this asset resides.
 
 ---
 
-##### `httpUrl`<sup>Required</sup> <a name="httpUrl" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.httpUrl"></a>
+##### `httpUrl`<sup>Required</sup> <a name="httpUrl" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.httpUrl"></a>
 
 ```typescript
 public readonly httpUrl: string;
@@ -222,7 +222,7 @@ https://s3.us-west-1.amazonaws.com/bucket/key
 ```
 
 
-##### `isFile`<sup>Required</sup> <a name="isFile" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.isFile"></a>
+##### `isFile`<sup>Required</sup> <a name="isFile" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.isFile"></a>
 
 ```typescript
 public readonly isFile: boolean;
@@ -237,7 +237,7 @@ correct file type was used.
 
 ---
 
-##### `isZipArchive`<sup>Required</sup> <a name="isZipArchive" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.isZipArchive"></a>
+##### `isZipArchive`<sup>Required</sup> <a name="isZipArchive" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.isZipArchive"></a>
 
 ```typescript
 public readonly isZipArchive: boolean;
@@ -252,7 +252,7 @@ correct file type was used.
 
 ---
 
-##### `s3BucketName`<sup>Required</sup> <a name="s3BucketName" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.s3BucketName"></a>
+##### `s3BucketName`<sup>Required</sup> <a name="s3BucketName" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.s3BucketName"></a>
 
 ```typescript
 public readonly s3BucketName: string;
@@ -264,7 +264,7 @@ Attribute that represents the name of the bucket this asset exists in.
 
 ---
 
-##### `s3ObjectKey`<sup>Required</sup> <a name="s3ObjectKey" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.s3ObjectKey"></a>
+##### `s3ObjectKey`<sup>Required</sup> <a name="s3ObjectKey" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.s3ObjectKey"></a>
 
 ```typescript
 public readonly s3ObjectKey: string;
@@ -276,7 +276,7 @@ Attribute which represents the S3 object key of this asset.
 
 ---
 
-##### `s3ObjectUrl`<sup>Required</sup> <a name="s3ObjectUrl" id="@aws-cdk/asset-kubectl-v20.KubectlAsset.property.s3ObjectUrl"></a>
+##### `s3ObjectUrl`<sup>Required</sup> <a name="s3ObjectUrl" id="@aws-cdk/asset-kubectl-v22.KubectlAsset.property.s3ObjectUrl"></a>
 
 ```typescript
 public readonly s3ObjectUrl: string;
