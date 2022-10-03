@@ -14,7 +14,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
   homepage: 'https://github.com/cdklabs/aws-asset-awscli#readme',
   autoApproveOptions: {
-    allowedUsernames: ['cdklabs-automation'],
+    allowedUsernames: ['aws-cdk-automation'],
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
