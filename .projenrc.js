@@ -2,7 +2,7 @@ const { awscdk, JsonPatch } = require('projen');
 const { NpmAccess } = require('projen/lib/javascript');
 
 // the version of k8s this branch supports
-const SPEC_VERSION = '20';
+const SPEC_VERSION = '22';
 const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
@@ -14,7 +14,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
   homepage: 'https://github.com/cdklabs/aws-asset-awscli#readme',
   autoApproveOptions: {
-    allowedUsernames: ['cdklabs-automation'],
+    allowedUsernames: ['aws-cdk-automation'],
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
@@ -45,6 +45,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   publishToGo: {
     moduleName: 'github.com/cdklabs/awscdk-asset-kubectl-go',
+    packageName: `kubectlv${SPEC_VERSION}`,
     gitBranch: `kubectl.${SPEC_VERSION}`,
     gitUserName: 'AWS CDK Team',
     gitUserEmail: 'aws-cdk@amazon.com',

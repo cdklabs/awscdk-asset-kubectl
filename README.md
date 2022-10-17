@@ -1,4 +1,4 @@
-# Asset with KubeCtl v1.20
+# Asset with KubeCtl v1.22
 <!--BEGIN STABILITY BANNER-->
 
 ---
@@ -15,15 +15,15 @@ This module exports a single class called `KubectlAsset` which is an `s3_assets.
 bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line.
 
-> - Helm Version: 3.8.1
-> - Kubectl Version: 1.20.0
+> - Helm Version: 3.9.4
+> - Kubectl Version: 1.22.0
 > 
 
 Usage:
 
 ```ts
 // KubectlAsset bundles the 'kubectl' and 'helm' command lines
-import { KubectlAsset } from '@aws-cdk/asset-kubectl-v20';
+import { KubectlAsset } from '@aws-cdk/asset-kubectl-v22';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 declare const fn: lambda.Function;
