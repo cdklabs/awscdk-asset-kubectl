@@ -6,6 +6,8 @@ documentation, we greatly value feedback and contributions from our community.
 Please read through this document before submitting any issues or pull requests to ensure we have all the necessary
 information to effectively respond to your bug report or contribution.
 
+Specifically, if you wish to contribute a new Kubectl Asset with a different kubectl version, jump to [Contributing a new Kubectl Asset](#contributing-a-new-kubectl-asset).
+
 
 ## Reporting Bugs/Feature Requests
 
@@ -23,7 +25,7 @@ reported the issue. Please try to include as much information as you can. Detail
 ## Contributing via Pull Requests
 Contributions via pull requests are much appreciated. Before sending us a pull request, please ensure that:
 
-1. You are working against the latest source on the *main* branch.
+1. You are working against the latest source on the *kubectl-v21/main* branch.
 2. You check existing open, and recently merged, pull requests to make sure someone else hasn't addressed the problem already.
 3. You open an issue to discuss any significant work - we would hate for your time to be wasted.
 
@@ -39,6 +41,29 @@ To send us a pull request, please:
 GitHub provides additional document on [forking a repository](https://help.github.com/articles/fork-a-repo/) and
 [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
 
+## Contributing a new Kubectl Asset
+If you would like to contribute a new Kubectl Asset with a different kubectl version, please follow these steps:
+
+1. Open a new GitHub issue titled `Feature Request: Asset with kubectl vX.Y.Z`. We will track the progress of the new
+Asset in the issue.
+2. If we decide to support the requested version, a maintainer will open a new branch, `kubectl-vY/main`
+(Y is the minor version) and update the issue accordingly.
+3. Fork the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
+4. Specifically: 
+    - change `README.md` to reflect the new versions of kubectl and helm that the asset will include.
+    - change `KUBECTL_VERSION` and `HELM_VERSION` in `layer/Dockerfile` to reflect the new versions.
+    The `HELM_VERSION` you select should be the highest version compatible with the `KUBECTL_VERSION`
+    according to the helm [docs](https://helm.sh/docs/topics/version_skew/). For example, if
+    `KUBECTL_VERSION` is v1.20.x, then the `HELM_VERSION` should be v3.8.x.
+    - change `SPEC_VERSION` in `.projenrc.js` to reflect the new minor version of kubectl.
+    For example, if `KUBECTL_VERSION` is v1.25.0, then `SPEC_VERSION` should be 25.
+    - for an example of code changes done for kubectl v1.22.0, see this [PR](https://github.com/cdklabs/awscdk-asset-kubectl/pull/7).
+5. Run `npx projen` to update the github workflows.
+6. Run `yarn:integ:kubectl-asset:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
+Run `yarn:integ:kubectl-asset:snapshot` if `deploy` succeeds and the snapshot does not get updated.
+7. Run `yarn build` to ensure everything builds correctly.
+8. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
+9. A maintainer will review your contribution from there!
 
 ## Finding contributions to work on
 Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.
