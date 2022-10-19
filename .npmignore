@@ -22,4 +22,4 @@ tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
 test/.tmp
-test/kubectl-asset.integ.snapshot
+test/kubectl-layer.integ.snapshot
