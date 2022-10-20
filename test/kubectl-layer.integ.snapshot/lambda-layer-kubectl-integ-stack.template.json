@@ -1,6 +1,6 @@
 {
   "Resources": {
-    "kubectlasset3D4B69F6": {
+    "KubectlLayer600207B5": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "Content": {
@@ -62,7 +62,7 @@
         "Handler": "index.handler",
         "Layers": [
           {
-            "Ref": "kubectlasset3D4B69F6"
+            "Ref": "KubectlLayer600207B5"
           }
         ],
         "MemorySize": 512,
@@ -227,7 +227,7 @@
         "Handler": "index.handler",
         "Layers": [
           {
-            "Ref": "kubectlasset3D4B69F6"
+            "Ref": "KubectlLayer600207B5"
           }
         ],
         "MemorySize": 512,
