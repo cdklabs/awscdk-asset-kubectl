@@ -1,15 +1,15 @@
 {
   "Resources": {
-    "kubectlasset3D4B69F6": {
+    "KubectlLayer600207B5": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "Content": {
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
           },
-          "S3Key": "630d69c4f84e1f1d9904b891dcfd263777bfbd4ab71f903521d69e0dcdab82f8.zip"
+          "S3Key": "c475180f5b1bbabac165414da13a9b843b111cd3b6d5fae9c954c006640c4064.zip"
         },
-        "Description": "/opt/kubectl/kubectl 1.21; /opt/helm/helm 3.9",
+        "Description": "/opt/kubectl/kubectl 1.24; /opt/helm/helm 3.9",
         "LicenseInfo": "Apache-2.0"
       }
     },
@@ -62,7 +62,7 @@
         "Handler": "index.handler",
         "Layers": [
           {
-            "Ref": "kubectlasset3D4B69F6"
+            "Ref": "KubectlLayer600207B5"
           }
         ],
         "MemorySize": 512,
@@ -227,7 +227,7 @@
         "Handler": "index.handler",
         "Layers": [
           {
-            "Ref": "kubectlasset3D4B69F6"
+            "Ref": "KubectlLayer600207B5"
           }
         ],
         "MemorySize": 512,

@@ -11,7 +11,7 @@ test('synthesized to a layer version', () => {
 
   // THEN
   Template.fromStack(stack).hasResourceProperties('AWS::Lambda::LayerVersion', {
-    Description: '/opt/kubectl/kubectl 1.21; /opt/helm/helm 3.9',
+    Description: '/opt/kubectl/kubectl 1.24; /opt/helm/helm 3.9',
   });
 });
 
