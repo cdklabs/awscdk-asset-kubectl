@@ -23,7 +23,7 @@ Usage:
 
 ```ts
 // KubectlLayer bundles the 'kubectl' and 'helm' command lines
-import { KubectlLayer } from '@aws-cdk/asset-kubectl-v23';
+import { KubectlLayer } from '@aws-cdk/lambda-layer-kubectl-v23';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 declare const fn: lambda.Function;
