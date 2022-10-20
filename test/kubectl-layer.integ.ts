@@ -3,7 +3,7 @@ import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as cr from 'aws-cdk-lib/custom-resources';
 
-import { KubectlAsset } from '../lib';
+import { KubectlLayer } from '../lib';
 
 /**
  * Test verifies that AWS CLI is invoked successfully inside Lambda runtime.
@@ -11,11 +11,7 @@ import { KubectlAsset } from '../lib';
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, 'lambda-layer-kubectl-integ-stack');
-const asset = new KubectlAsset(stack, 'kubectl-asset');
-const layer = new lambda.LayerVersion(stack, 'KubectlLayer', {
-  code: lambda.Code.fromBucket(asset.bucket, asset.s3ObjectKey),
-  description: '/opt/kubectl/kubectl and /opt/helm/helm',
-});
+const layer = new KubectlLayer(stack, 'kubectl-asset');
 
 const runtimes = [
   lambda.Runtime.PYTHON_3_7,
