@@ -22,7 +22,7 @@ bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) a
 Usage:
 
 ```ts
-// KubectlAsset bundles the 'kubectl' and 'helm' command lines
+// KubectlLayer bundles the 'kubectl' and 'helm' command lines
 import { KubectlLayer } from '@aws-cdk/lambda-layer-kubectl-v22';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
