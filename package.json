@@ -1,6 +1,6 @@
 {
-  "name": "@aws-cdk/asset-kubectl-v22",
-  "description": "An Asset construct that contains kubectl, for use in Lambda Layers",
+  "name": "@aws-cdk/lambda-layer-kubectl-v22",
+  "description": "A Lambda Layer that contains kubectl v1.22",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/awscdk-asset-kubectl.git"
@@ -15,11 +15,11 @@
     "docgen": "npx projen docgen",
     "eject": "npx projen eject",
     "eslint": "npx projen eslint",
-    "integ:kubectl-asset:assert": "npx projen integ:kubectl-asset:assert",
-    "integ:kubectl-asset:deploy": "npx projen integ:kubectl-asset:deploy",
-    "integ:kubectl-asset:destroy": "npx projen integ:kubectl-asset:destroy",
-    "integ:kubectl-asset:snapshot": "npx projen integ:kubectl-asset:snapshot",
-    "integ:kubectl-asset:watch": "npx projen integ:kubectl-asset:watch",
+    "integ:kubectl-layer:assert": "npx projen integ:kubectl-layer:assert",
+    "integ:kubectl-layer:deploy": "npx projen integ:kubectl-layer:deploy",
+    "integ:kubectl-layer:destroy": "npx projen integ:kubectl-layer:destroy",
+    "integ:kubectl-layer:snapshot": "npx projen integ:kubectl-layer:snapshot",
+    "integ:kubectl-layer:watch": "npx projen integ:kubectl-layer:watch",
     "integ:snapshot-all": "npx projen integ:snapshot-all",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
@@ -130,22 +130,22 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "software.amazon.awscdk.cdk.asset.kubectl.v22",
+        "package": "software.amazon.awscdk.cdk.lambdalayer.kubectl.v22",
         "maven": {
           "groupId": "software.amazon.awscdk",
-          "artifactId": "cdk-asset-kubectl-v22"
+          "artifactId": "cdk-lambda-layer-kubectl-v22"
         }
       },
       "python": {
-        "distName": "aws-cdk.asset-kubectl-v22",
-        "module": "aws_cdk.asset_kubectl_v22"
+        "distName": "aws-cdk.lambda-layer-kubectl-v22",
+        "module": "aws_cdk.lambda_layer_kubectl_v22"
       },
       "dotnet": {
-        "namespace": "Amazon.CDK.Asset.KubectlV22",
-        "packageId": "Amazon.CDK.Asset.KubectlV22"
+        "namespace": "Amazon.CDK.LambdaLayer.KubectlV22",
+        "packageId": "Amazon.CDK.LambdaLayer.KubectlV22"
       },
       "go": {
-        "moduleName": "github.com/cdklabs/awscdk-asset-kubectl-go",
+        "moduleName": "github.com/cdklabs/awscdk-kubectl-go",
         "packageName": "kubectlv22"
       }
     },
