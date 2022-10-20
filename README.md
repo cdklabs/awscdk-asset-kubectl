@@ -1,4 +1,4 @@
-# Asset with KubeCtl v1.21
+# Lambda Layer with KubeCtl v1.21
 <!--BEGIN STABILITY BANNER-->
 
 ---
