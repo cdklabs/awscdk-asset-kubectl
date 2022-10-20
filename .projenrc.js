@@ -9,8 +9,8 @@ const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amazon Web Services',
   cdkVersion: '2.0.0',
-  name: `@aws-cdk/asset-kubectl-v${SPEC_VERSION}`,
-  description: 'An Asset construct that contains kubectl, for use in Lambda Layers',
+  name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
+  description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
   homepage: 'https://github.com/cdklabs/aws-asset-awscli#readme',
   autoApproveOptions: {
@@ -30,21 +30,21 @@ const project = new awscdk.AwsCdkConstructLibrary({
   releaseWorkflowName: releaseWorkflowName,
   defaultReleaseBranch: defaultReleaseBranchName,
   publishToPypi: {
-    distName: `aws-cdk.asset-kubectl-v${SPEC_VERSION}`,
-    module: `aws_cdk.asset_kubectl_v${SPEC_VERSION}`,
+    distName: `aws-cdk.lambda-layer-kubectl-v${SPEC_VERSION}`,
+    module: `aws_cdk.lambda_layer_kubectl_v${SPEC_VERSION}`,
   },
   publishToMaven: {
-    javaPackage: `software.amazon.awscdk.cdk.asset.kubectl.v${SPEC_VERSION}`,
+    javaPackage: `software.amazon.awscdk.cdk.lambdalayer.kubectl.v${SPEC_VERSION}`,
     mavenGroupId: 'software.amazon.awscdk',
-    mavenArtifactId: `cdk-asset-kubectl-v${SPEC_VERSION}`,
+    mavenArtifactId: `cdk-lambda-layer-kubectl-v${SPEC_VERSION}`,
     mavenEndpoint: 'https://aws.oss.sonatype.org',
   },
   publishToNuget: {
-    dotNetNamespace: `Amazon.CDK.Asset.KubectlV${SPEC_VERSION}`,
-    packageId: `Amazon.CDK.Asset.KubectlV${SPEC_VERSION}`,
+    dotNetNamespace: `Amazon.CDK.LambdaLayer.KubectlV${SPEC_VERSION}`,
+    packageId: `Amazon.CDK.LambdaLayer.KubectlV${SPEC_VERSION}`,
   },
   publishToGo: {
-    moduleName: 'github.com/cdklabs/awscdk-asset-kubectl-go',
+    moduleName: 'github.com/cdklabs/awscdk-kubectl-go',
     packageName: `kubectlv${SPEC_VERSION}`,
     gitBranch: `kubectl.${SPEC_VERSION}`,
     gitUserName: 'AWS CDK Team',
