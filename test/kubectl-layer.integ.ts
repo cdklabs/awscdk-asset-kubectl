@@ -6,12 +6,12 @@ import * as cr from 'aws-cdk-lib/custom-resources';
 import { KubectlLayer } from '../lib';
 
 /**
- * Test verifies that AWS CLI is invoked successfully inside Lambda runtime.
+ * Test verifies that kubectl and helm are invoked successfully inside Lambda runtime.
  */
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, 'lambda-layer-kubectl-integ-stack');
-const layer = new KubectlLayer(stack, 'kubectl-asset');
+const layer = new KubectlLayer(stack, 'KubectlLayer');
 
 const runtimes = [
   lambda.Runtime.PYTHON_3_7,
