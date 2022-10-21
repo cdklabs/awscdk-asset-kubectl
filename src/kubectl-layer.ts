@@ -5,7 +5,7 @@ import { assetHash, ASSET_FILE } from './_asset';
 /**
  * A CDK Asset construct that contains `kubectl` and `helm`.
  */
-export class KubectlLayer extends lambda.LayerVersion {
+export class KubectlV22Layer extends lambda.LayerVersion {
   constructor(scope: Construct, id: string) {
     super(scope, id, {
       code: lambda.Code.fromAsset(ASSET_FILE, {
