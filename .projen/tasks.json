@@ -138,7 +138,7 @@
           "exec": "[ -d \"test/kubectl-layer.integ.snapshot\" ] || (echo \"No snapshot available for integration test 'kubectl-layer'. Run 'projen integ:kubectl-layer:deploy' to capture.\" && exit 1)"
         },
         {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/.tmp/kubectl-layer.integ/assert.cdk.out > /dev/null"
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/.tmp/kubectl-layer.integ/assert.cdk.out > /dev/null"
         },
         {
           "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/kubectl-layer.integ.snapshot/ test/.tmp/kubectl-layer.integ/assert.cdk.out/"
@@ -153,7 +153,7 @@
           "exec": "rm -fr test/.tmp/kubectl-layer.integ/deploy.cdk.out"
         },
         {
-          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/.tmp/kubectl-layer.integ/deploy.cdk.out"
+          "exec": "cdk deploy --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' --require-approval=never -o test/.tmp/kubectl-layer.integ/deploy.cdk.out"
         },
         {
           "exec": "rm -fr test/kubectl-layer.integ.snapshot"
@@ -180,7 +180,7 @@
       "description": "update snapshot for integration test \"kubectl-layer\"",
       "steps": [
         {
-          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata -o test/kubectl-layer.integ.snapshot > /dev/null"
+          "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/kubectl-layer.integ.snapshot > /dev/null"
         }
       ]
     },
@@ -189,7 +189,7 @@
       "description": "watch integration test 'kubectl-layer' (without updating snapshots)",
       "steps": [
         {
-          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/.tmp/kubectl-layer.integ/deploy.cdk.out"
+          "exec": "cdk watch --app \"ts-node -P tsconfig.dev.json test/kubectl-layer.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata '**' -o test/.tmp/kubectl-layer.integ/deploy.cdk.out"
         }
       ]
     },
@@ -336,15 +336,6 @@
         },
         {
           "spawn": "integ:kubectl-layer:assert"
-        }
-      ]
-    },
-    "test:update": {
-      "name": "test:update",
-      "description": "Update jest snapshots",
-      "steps": [
-        {
-          "exec": "jest --updateSnapshot"
         }
       ]
     },
