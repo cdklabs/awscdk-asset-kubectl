@@ -304,6 +304,7 @@
       "description": "Prepare a release from \"kubectl-v23/main\" branch",
       "env": {
         "RELEASE": "true",
+        "MAJOR": "2",
         "RELEASE_TAG_PREFIX": "kubectl-v23"
       },
       "steps": [
