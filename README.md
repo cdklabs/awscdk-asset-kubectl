@@ -27,7 +27,7 @@ import { KubectlV23Layer } from '@aws-cdk/lambda-layer-kubectl-v23';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 declare const fn: lambda.Function;
-const kubectl = new KubectlLayer(this, 'KubectlLayer');
+const kubectl = new KubectlV23Layer(this, 'KubectlLayer');
 fn.addLayers(kubectl);
 ```
 
