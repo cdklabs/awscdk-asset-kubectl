@@ -11,7 +11,7 @@
 
 <!--END STABILITY BANNER-->
 
-This module exports a single class called `KubectlLayer` which is a `lambda.LayerVersion` that
+This module exports a single class called `KubectlV23Layer` which is a `lambda.LayerVersion` that
 bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line.
 
