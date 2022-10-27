@@ -51,12 +51,3 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
-test/.tmp
-test/kubectl-asset.integ.snapshot/asset.*
-test/kubectl-asset.integ.snapshot/**/asset.*
-test/kubectl-asset.integ.snapshot/cdk.out
-test/kubectl-asset.integ.snapshot/**/cdk.out
-test/kubectl-asset.integ.snapshot/manifest.json
-test/kubectl-asset.integ.snapshot/**/manifest.json
-test/kubectl-asset.integ.snapshot/tree.json
-test/kubectl-asset.integ.snapshot/**/tree.json
