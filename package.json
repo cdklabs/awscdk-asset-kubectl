@@ -1,9 +1,9 @@
 {
-  "name": "@aws-cdk/asset-awscli-v1",
-  "description": "A library that contains the AWS CLI, as an AssetSource, for use in Lambda Layers",
+  "name": "@aws-cdk/asset-kubectl-v20",
+  "description": "A library that contains the kubectl, as an AssetSource, for use in Lambda Layers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdklabs/awscdk-asset-awscli.git"
+    "url": "https://github.com/cdklabs/awscdk-asset-kubectl.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -25,7 +25,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
-    "release:awscli-v1/main": "npx projen release:awscli-v1/main",
+    "release:kubectl-v20/main": "npx projen release:kubectl-v20/main",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
@@ -66,7 +66,7 @@
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/cdklabs/awscdk-asset-awscli#readme",
+  "homepage": "https://github.com/cdklabs/awscdk-asset-kubectl#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -117,23 +117,23 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "software.amazon.awscdk.cdk.asset.awscli.v1",
+        "package": "software.amazon.awscdk.cdk.asset.kubectl.v20",
         "maven": {
           "groupId": "software.amazon.awscdk",
-          "artifactId": "cdk-asset-awscli-v1"
+          "artifactId": "cdk-asset-kubectl-v20"
         }
       },
       "python": {
-        "distName": "aws-cdk.asset-awscli-v1",
-        "module": "aws_cdk.asset_awscli_v1"
+        "distName": "aws-cdk.asset-kubectl-v20",
+        "module": "aws_cdk.asset_kubectl_v20"
       },
       "dotnet": {
-        "namespace": "Amazon.CDK.Asset.AwsCliV1",
-        "packageId": "Amazon.CDK.Asset.AwsCliV1"
+        "namespace": "Amazon.CDK.Asset.KubectlV20",
+        "packageId": "Amazon.CDK.Asset.KubectlV20"
       },
       "go": {
-        "moduleName": "github.com/cdklabs/awscdk-asset-awscli-go",
-        "packageName": "awscliv1"
+        "moduleName": "github.com/cdklabs/awscdk-asset-kubectl-go",
+        "packageName": "kubectlv20"
       }
     },
     "tsc": {

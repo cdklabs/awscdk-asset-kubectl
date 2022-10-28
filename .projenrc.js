@@ -1,17 +1,18 @@
 const { awscdk, JsonPatch, DependencyType } = require('projen');
 const { NpmAccess } = require('projen/lib/javascript');
 
-const MAJOR_VERSION = 1;
-const releaseWorkflowName = `release-awscli-v${MAJOR_VERSION}`;
-const defaultReleaseBranchName = `awscli-v${MAJOR_VERSION}/main`;
+// the version of k8s this branch supports
+const SPEC_VERSION = 20;
+const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
+const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amazon Web Services, Inc.',
   cdkVersion: '2.0.0',
-  name: `@aws-cdk/asset-awscli-v${MAJOR_VERSION}`,
-  description: 'A library that contains the AWS CLI, as an AssetSource, for use in Lambda Layers',
-  repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-awscli.git',
-  homepage: 'https://github.com/cdklabs/awscdk-asset-awscli#readme',
+  name: `@aws-cdk/asset-kubectl-v${SPEC_VERSION}`,
+  description: 'A library that contains the kubectl, as an AssetSource, for use in Lambda Layers',
+  repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
+  homepage: 'https://github.com/cdklabs/awscdk-asset-kubectl#readme',
   autoApproveOptions: {
     allowedUsernames: ['aws-cdk-automation'],
     secret: 'GITHUB_TOKEN',
@@ -26,27 +27,27 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
   majorVersion: 2,
   npmAccess: NpmAccess.PUBLIC,
-  releaseTagPrefix: `awscli-v${MAJOR_VERSION}`,
+  releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
   defaultReleaseBranch: defaultReleaseBranchName,
   publishToPypi: {
-    distName: `aws-cdk.asset-awscli-v${MAJOR_VERSION}`,
-    module: `aws_cdk.asset_awscli_v${MAJOR_VERSION}`,
+    distName: `aws-cdk.asset-kubectl-v${SPEC_VERSION}`,
+    module: `aws_cdk.asset_kubectl_v${SPEC_VERSION}`,
   },
   publishToMaven: {
-    javaPackage: `software.amazon.awscdk.cdk.asset.awscli.v${MAJOR_VERSION}`,
+    javaPackage: `software.amazon.awscdk.cdk.asset.kubectl.v${SPEC_VERSION}`,
     mavenGroupId: 'software.amazon.awscdk',
-    mavenArtifactId: `cdk-asset-awscli-v${MAJOR_VERSION}`,
+    mavenArtifactId: `cdk-asset-kubectl-v${SPEC_VERSION}`,
     mavenEndpoint: 'https://aws.oss.sonatype.org',
   },
   publishToNuget: {
-    dotNetNamespace: `Amazon.CDK.Asset.AwsCliV${MAJOR_VERSION}`,
-    packageId: `Amazon.CDK.Asset.AwsCliV${MAJOR_VERSION}`,
+    dotNetNamespace: `Amazon.CDK.Asset.KubectlV${SPEC_VERSION}`,
+    packageId: `Amazon.CDK.Asset.KubectlV${SPEC_VERSION}`,
   },
   publishToGo: {
-    moduleName: 'github.com/cdklabs/awscdk-asset-awscli-go',
-    packageName: `awscliv${MAJOR_VERSION}`,
-    gitBranch: `awscli.${MAJOR_VERSION}`,
+    moduleName: 'github.com/cdklabs/awscdk-asset-kubectl-go',
+    packageName: `kubectlv${SPEC_VERSION}`,
+    gitBranch: `kubectl.${SPEC_VERSION}`,
     gitUserName: 'AWS CDK Team',
     gitUserEmail: 'aws-cdk@amazon.com',
     githubTokenSecret: 'PROJEN_GITHUB_TOKEN',
@@ -66,7 +67,7 @@ const buildWorkflow = project.tryFindObjectFile('.github/workflows/build.yml');
 buildWorkflow.patch(JsonPatch.add('/jobs/build/container/options', '--group-add sudo'));
 const releaseWorkflow = project.tryFindObjectFile(`.github/workflows/${releaseWorkflowName}.yml`);
 releaseWorkflow.patch(JsonPatch.add('/jobs/release/container/options', '--group-add sudo'));
-const upgradeWorkflow = project.tryFindObjectFile(`.github/workflows/upgrade-awscli-v${MAJOR_VERSION}-main.yml`);
+const upgradeWorkflow = project.tryFindObjectFile(`.github/workflows/upgrade-kubectl-v${SPEC_VERSION}-main.yml`);
 upgradeWorkflow.patch(JsonPatch.add('/jobs/upgrade/container/options', '--group-add sudo'));
 
 project.preCompileTask.exec('layer/build.sh');

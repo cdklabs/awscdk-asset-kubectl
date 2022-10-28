@@ -38,9 +38,9 @@ junit.xml
 !/.github/workflows/build.yml
 /dist/changelog.md
 /dist/version.txt
-!/.github/workflows/release-awscli-v1.yml
+!/.github/workflows/release-kubectl-v20.yml
 !/.mergify.yml
-!/.github/workflows/upgrade-awscli-v1-main.yml
+!/.github/workflows/upgrade-kubectl-v20-main.yml
 !/.github/pull_request_template.md
 !/test/
 !/tsconfig.dev.json
