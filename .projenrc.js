@@ -57,9 +57,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
 // We only need aws-cdk-lib and constructs for testing. Neither library is used
 // in the public API.
 project.deps.removeDependency('constructs', DependencyType.PEER);
-project.deps.addDependency('constructs@10.0.5', DependencyType.DEVENV);
+project.deps.addDependency('constructs@^10.0.5', DependencyType.DEVENV);
 project.deps.removeDependency('aws-cdk-lib', DependencyType.PEER);
-project.deps.addDependency('aws-cdk-lib@2.0.0', DependencyType.DEVENV);
+project.deps.addDependency('aws-cdk-lib@^2.0.0', DependencyType.DEVENV);
 
 // These patches are required to enable sudo commands in the workflows under `workflowBootstrapSteps`,
 // see `workflowBootstrapSteps` above for why a sudo command is needed.
