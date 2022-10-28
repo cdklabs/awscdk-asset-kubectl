@@ -1,9 +1,9 @@
 {
-  "name": "@aws-cdk/asset-kubectl-v20",
-  "description": "An Asset construct that contains kubectl, for use in Lambda Layers",
+  "name": "@aws-cdk/asset-awscli-v1",
+  "description": "A library that contains the AWS CLI, as an AssetSource, for use in Lambda Layers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdklabs/awscdk-asset-kubectl.git"
+    "url": "https://github.com/cdklabs/awscdk-asset-awscli.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -25,7 +25,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
-    "release:kubectl-v20/main": "npx projen release:kubectl-v20/main",
+    "release:awscli-v1/main": "npx projen release:awscli-v1/main",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
@@ -34,7 +34,7 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "Amazon Web Services",
+    "name": "Amazon Web Services, Inc.",
     "organization": false
   },
   "devDependencies": {
@@ -42,6 +42,8 @@
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "aws-cdk-lib": "2.0.0",
+    "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^3.5.1",
@@ -59,9 +61,12 @@
     "ts-jest": "^27",
     "typescript": "^4.8.4"
   },
+  "keywords": [
+    "cdk"
+  ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/cdklabs/aws-asset-awscli#readme",
+  "homepage": "https://github.com/cdklabs/awscdk-asset-awscli#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -112,23 +117,23 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "software.amazon.awscdk.cdk.asset.kubectl.v20",
+        "package": "software.amazon.awscdk.cdk.asset.awscli.v1",
         "maven": {
           "groupId": "software.amazon.awscdk",
-          "artifactId": "cdk-asset-kubectl-v20"
+          "artifactId": "cdk-asset-awscli-v1"
         }
       },
       "python": {
-        "distName": "aws-cdk.asset-kubectl-v20",
-        "module": "aws_cdk.asset_kubectl_v20"
+        "distName": "aws-cdk.asset-awscli-v1",
+        "module": "aws_cdk.asset_awscli_v1"
       },
       "dotnet": {
-        "namespace": "Amazon.CDK.Asset.KubectlV20",
-        "packageId": "Amazon.CDK.Asset.KubectlV20"
+        "namespace": "Amazon.CDK.Asset.AwsCliV1",
+        "packageId": "Amazon.CDK.Asset.AwsCliV1"
       },
       "go": {
-        "moduleName": "github.com/cdklabs/awscdk-asset-kubectl-go",
-        "packageName": "kubectlv20"
+        "moduleName": "github.com/cdklabs/awscdk-asset-awscli-go",
+        "packageName": "awscliv1"
       }
     },
     "tsc": {

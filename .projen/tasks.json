@@ -32,7 +32,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "kubectl-v20"
+        "RELEASE_TAG_PREFIX": "awscli-v1"
       },
       "steps": [
         {
@@ -227,13 +227,13 @@
         }
       ]
     },
-    "release:kubectl-v20/main": {
-      "name": "release:kubectl-v20/main",
-      "description": "Prepare a release from \"kubectl-v20/main\" branch",
+    "release:awscli-v1/main": {
+      "name": "release:awscli-v1/main",
+      "description": "Prepare a release from \"awscli-v1/main\" branch",
       "env": {
         "RELEASE": "true",
         "MAJOR": "2",
-        "RELEASE_TAG_PREFIX": "kubectl-v20"
+        "RELEASE_TAG_PREFIX": "awscli-v1"
       },
       "steps": [
         {
@@ -282,7 +282,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "kubectl-v20"
+        "RELEASE_TAG_PREFIX": "awscli-v1"
       },
       "steps": [
         {
@@ -301,19 +301,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
           "exec": "yarn install --check-files"
