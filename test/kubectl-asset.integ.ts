@@ -5,18 +5,19 @@ import * as s3_assets from 'aws-cdk-lib/aws-s3-assets';
 import * as cr from 'aws-cdk-lib/custom-resources';
 
 import { LAYER_SOURCE_DIR, ASSET_FILE } from '../lib';
+import { hashFile } from './util';
 
 /**
  * Test verifies that AWS CLI is invoked successfully inside Lambda runtime.
  */
-
 const app = new cdk.App();
 const stack = new cdk.Stack(app, 'lambda-layer-kubectl-integ-stack');
 const asset = new s3_assets.Asset(stack, 'layer-asset', {
   path: ASSET_FILE,
-  assetHash: cdk.FileSystem.fingerprint(LAYER_SOURCE_DIR),
+  assetHash: hashFile(LAYER_SOURCE_DIR),
+});
 
-});const layer = new lambda.LayerVersion(stack, 'KubectlLayer', {
+const layer = new lambda.LayerVersion(stack, 'KubectlLayer', {
   code: lambda.Code.fromBucket(asset.bucket, asset.s3ObjectKey),
   description: '/opt/kubectl/kubectl and /opt/helm/helm',
 });
