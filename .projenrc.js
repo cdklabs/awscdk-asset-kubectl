@@ -1,4 +1,4 @@
-const { awscdk, JsonPatch } = require('projen');
+const { awscdk, JsonPatch, DependencyType } = require('projen');
 const { NpmAccess } = require('projen/lib/javascript');
 
 // the version of k8s this branch supports
@@ -7,12 +7,12 @@ const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
 const project = new awscdk.AwsCdkConstructLibrary({
-  author: 'Amazon Web Services',
+  author: 'Amazon Web Services, Inc.',
   cdkVersion: '2.0.0',
   name: `@aws-cdk/asset-kubectl-v${SPEC_VERSION}`,
-  description: 'An Asset construct that contains kubectl, for use in Lambda Layers',
+  description: 'A library that contains kubectl for use in Lambda Layers',
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
-  homepage: 'https://github.com/cdklabs/aws-asset-awscli#readme',
+  homepage: 'https://github.com/cdklabs/awscdk-asset-kubectl#readme',
   autoApproveOptions: {
     allowedUsernames: ['aws-cdk-automation'],
     secret: 'GITHUB_TOKEN',
@@ -25,6 +25,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
       run: 'sudo chown superchain /var/run/docker.sock',
     },
   ],
+  majorVersion: 2,
   npmAccess: NpmAccess.PUBLIC,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
@@ -52,6 +53,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
     githubTokenSecret: 'PROJEN_GITHUB_TOKEN',
   },
 });
+
+// We only need aws-cdk-lib and constructs for testing. Neither library is used
+// in the public API.
+project.deps.removeDependency('constructs', DependencyType.PEER);
+project.deps.addDependency('constructs@^10.0.5', DependencyType.DEVENV);
+project.deps.removeDependency('aws-cdk-lib', DependencyType.PEER);
+project.deps.addDependency('aws-cdk-lib@^2.0.0', DependencyType.DEVENV);
 
 // These patches are required to enable sudo commands in the workflows under `workflowBootstrapSteps`,
 // see `workflowBootstrapSteps` above for why a sudo command is needed.
