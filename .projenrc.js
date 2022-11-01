@@ -10,7 +10,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amazon Web Services, Inc.',
   cdkVersion: '2.0.0',
   name: `@aws-cdk/asset-kubectl-v${SPEC_VERSION}`,
-  description: 'A library that contains the kubectl, as an AssetSource, for use in Lambda Layers',
+  description: 'A library that contains kubectl for use in Lambda Layers',
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
   homepage: 'https://github.com/cdklabs/awscdk-asset-kubectl#readme',
   autoApproveOptions: {

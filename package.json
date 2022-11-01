@@ -1,6 +1,6 @@
 {
   "name": "@aws-cdk/asset-kubectl-v20",
-  "description": "A library that contains the kubectl, as an AssetSource, for use in Lambda Layers",
+  "description": "A library that contains kubectl for use in Lambda Layers",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/awscdk-asset-kubectl.git"
