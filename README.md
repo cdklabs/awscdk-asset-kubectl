@@ -3,17 +3,17 @@
 
 ---
 
-![cdk-constructs: Experimental](https://img.shields.io/badge/cdk--constructs-experimental-important.svg?style=for-the-badge)
+![cdk-constructs: Stable](https://img.shields.io/badge/cdk--constructs-stable-success.svg?style=for-the-badge)
 
 ---
 
-> This library is currently under development. Do not use!
-
 <!--END STABILITY BANNER-->
 
-This module exports a single class called `KubectlAsset` which is an `s3_assets.Asset` that
-bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
-[`helm`](https://helm.sh/) command line.
+This module bundles the
+[`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
+[`helm`](https://helm.sh/) command line as a local asset. It exposes constants
+`ASSET_FILE` and `LAYER_SOURCE_DIR` that can be consumed via the cdk `Asset`
+construct.
 
 > - Helm Version: 3.8.1
 > - Kubectl Version: 1.20.0
@@ -22,14 +22,21 @@ bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) a
 Usage:
 
 ```ts
-// KubectlAsset bundles the 'kubectl' and 'helm' command lines
-import { KubectlAsset } from '@aws-cdk/asset-kubectl-v20';
+// ASSET_FILE bundles the 'kubectl' and 'helm' command lines
+import { ASSET_FILE, LAYER_SOURCE_DIR } from '@aws-cdk/asset-kubectl-v20';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as s3_assets from 'aws-cdk-lib/aws-s3-assets';
+import { FileSystem } from 'aws-cdk-lib';
 
 declare const fn: lambda.Function;
-const kubectl = new KubectlAsset(this, 'KubectlAsset');
+const asset = new s3_assets.Asset(this, 'layer-asset', {
+  path: ASSET_FILE,
+  assetHash: FileSystem.fingerprint(LAYER_SOURCE_DIR),
+});
+
 fn.addLayers(new lambda.LayerVersion(this, 'KubectlLayer', {
-  code: lambda.Code.fromBucket(kubectl.bucket, kubectl.s3ObjectKey),
+  code: lambda.Code.fromBucket(asset.bucket, asset.s3ObjectKey),
+  description: '/opt/kubectl/kubectl and /opt/helm/helm',
 }));
 ```
 
