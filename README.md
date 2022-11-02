@@ -29,7 +29,7 @@ import * as s3_assets from 'aws-cdk-lib/aws-s3-assets';
 import { FileSystem } from 'aws-cdk-lib';
 
 declare const fn: lambda.Function;
-const asset = new s3_assets.Asset(stack, 'layer-asset', {
+const asset = new s3_assets.Asset(this, 'layer-asset', {
   path: ASSET_FILE,
   assetHash: FileSystem.fingerprint(LAYER_SOURCE_DIR),
 });
