@@ -9,9 +9,11 @@
 
 <!--END STABILITY BANNER-->
 
-This module exports constants `ASSET_FILE` and `LAYER_SOURCE_DIR` that bundles the
+This module bundles the
 [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
-[`helm`](https://helm.sh/) command line.
+[`helm`](https://helm.sh/) command line as a local asset. It exposes constants
+`ASSET_FILE` and `LAYER_SOURCE_DIR` that can be consumed via the cdk `Asset`
+construct.
 
 > - Helm Version: 3.8.1
 > - Kubectl Version: 1.20.0
