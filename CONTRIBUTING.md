@@ -21,7 +21,6 @@ reported the issue. Please try to include as much information as you can. Detail
 * Any modifications you've made relevant to the bug
 * Anything unusual about your environment or deployment
 
-
 ## Contributing via Pull Requests
 Contributions via pull requests are much appreciated. Before sending us a pull request, please ensure that:
 
@@ -65,9 +64,22 @@ Run `yarn:integ:kubectl-asset:snapshot` if `deploy` succeeds and the snapshot do
 8. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
 9. A maintainer will review your contribution from there!
 
+## Backporting changes to branches with different Kubectl versions
+This repository consists of multiple branches, with each branch corresponding to a specific Kubectl version.
+For example, `kubectl-v24/main` is the branch that releases a Lambda Layer that bundles kubectl version 1.24.
+Sometimes, a contribution made to a specific branch should be propogated to other branches in this repository as well.
+To do this, you can add `backport-to-kubectl-v21+` as a label to the PR that tells Mergify to backport when the PR is merged.
+This will backport to all versions of kubectl except kubectl v1.20, which is special and does not expose a Lambda Layer.
+
+If you think you need to backport to a specific subset of branches instead, you can ask a maintainer to backport via
+a mergify comment:
+
+```
+@Mergifyio backport kubectl-v21/main kubectl-v22/main
+```
+
 ## Finding contributions to work on
 Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.
-
 
 ## Code of Conduct
 This project has adopted the [Amazon Open Source Code of Conduct](https://aws.github.io/code-of-conduct).
