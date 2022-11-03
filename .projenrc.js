@@ -52,6 +52,22 @@ const project = new awscdk.AwsCdkConstructLibrary({
     gitUserEmail: 'aws-cdk@amazon.com',
     githubTokenSecret: 'PROJEN_GITHUB_TOKEN',
   },
+  githubOptions: {
+    mergifyOptions: {
+      rules: [{
+        name: 'backport patches to kubectl-v21+ branches',
+        conditions: [
+          'label=backport-to-kubectl-v21+',
+          `base=kubectl-v${SPEC_VERSION}/main`,
+        ],
+        actions: {
+          backport: {
+            regexes: [`kubectl-v(?!20|${SPEC_VERSION})[\\d]*\\/main`],
+          },
+        },
+      }],
+    },
+  },
 });
 
 // These patches are required to enable sudo commands in the workflows under `workflowBootstrapSteps`,

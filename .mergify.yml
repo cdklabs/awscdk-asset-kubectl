@@ -12,6 +12,14 @@ queue_rules:
       - status-success=package-dotnet
       - status-success=package-go
 pull_request_rules:
+  - name: backport patches to kubectl-v21+ branches
+    conditions:
+      - label=backport-to-kubectl-v21+
+      - base=kubectl-v22/main
+    actions:
+      backport:
+        regexes:
+          - kubectl-v(?!20|22)[\d]*\/main
   - name: Automatic merge on approval and successful build
     actions:
       delete_head_branch: {}
