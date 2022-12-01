@@ -78,7 +78,7 @@
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/cdklabs/aws-asset-awscli#readme",
+  "homepage": "https://github.com/cdklabs/awscdk-asset-kubectl#readme",
   "publishConfig": {
     "access": "public"
   },
