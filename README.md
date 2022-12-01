@@ -7,8 +7,6 @@
 
 ---
 
-> This library is currently under development. Do not use!
-
 <!--END STABILITY BANNER-->
 
 This module exports a single class called `KubectlV24Layer` which is a `lambda.LayerVersion` that
@@ -23,7 +21,7 @@ Usage:
 
 ```ts
 // KubectlLayer bundles the 'kubectl' and 'helm' command lines
-import { KubectlV24Layer } from '@aws-cdk/lambda-layer-kubectl-v23';
+import { KubectlV24Layer } from '@aws-cdk/lambda-layer-kubectl-v24';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 declare const fn: lambda.Function;
