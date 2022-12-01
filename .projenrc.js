@@ -12,7 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
-  homepage: 'https://github.com/cdklabs/aws-asset-awscli#readme',
+  homepage: 'https://github.com/cdklabs/awscdk-asset-kubectl#readme',
   autoApproveOptions: {
     allowedUsernames: ['aws-cdk-automation'],
     secret: 'GITHUB_TOKEN',
