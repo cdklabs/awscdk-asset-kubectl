@@ -7,8 +7,6 @@
 
 ---
 
-> This library is currently under development. Do not use!
-
 <!--END STABILITY BANNER-->
 
 This module exports a single class called `KubectlV23Layer` which is a `lambda.LayerVersion` that
