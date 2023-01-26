@@ -1,5 +1,6 @@
-import { awscdk, JsonPatch } from 'projen';
+import { awscdk } from 'projen';
 import { NpmAccess } from 'projen/lib/javascript';
+import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
 // the version of k8s this branch supports
 const SPEC_VERSION = '24';
@@ -72,14 +73,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
 });
 
-// These patches are required to enable sudo commands in the workflows under `workflowBootstrapSteps`,
-// see `workflowBootstrapSteps` above for why a sudo command is needed.
-const buildWorkflow = project.tryFindObjectFile('.github/workflows/build.yml');
-buildWorkflow!.patch(JsonPatch.add('/jobs/build/container/options', '--group-add sudo'));
-const releaseWorkflow = project.tryFindObjectFile(`.github/workflows/${releaseWorkflowName}.yml`);
-releaseWorkflow!.patch(JsonPatch.add('/jobs/release/container/options', '--group-add sudo'));
-const upgradeWorkflow = project.tryFindObjectFile(`.github/workflows/upgrade-kubectl-v${SPEC_VERSION}-main.yml`);
-upgradeWorkflow!.patch(JsonPatch.add('/jobs/upgrade/container/options', '--group-add sudo'));
+// Fix Docker on GitHub
+new WorkflowNoDockerPatch(project, { workflow: 'build' });
+new WorkflowNoDockerPatch(project, { workflow: 'release', workflowName: 'release-kubectl-v24' });
 
 project.preCompileTask.exec('layer/build.sh');
 
