@@ -21,13 +21,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
-  workflowBootstrapSteps: [
-    {
-      // This step is required to allow the build workflow to build docker images.
-      name: 'Change permissions on /var/run/docker.sock',
-      run: 'sudo chown superchain /var/run/docker.sock',
-    },
-  ],
   majorVersion: 2,
   npmAccess: NpmAccess.PUBLIC,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
