@@ -1,4 +1,4 @@
-# Lambda Layer with KubeCtl v1.24
+# Lambda Layer with KubeCtl v1.25
 <!--BEGIN STABILITY BANNER-->
 
 ---
@@ -9,23 +9,23 @@
 
 <!--END STABILITY BANNER-->
 
-This module exports a single class called `KubectlV24Layer` which is a `lambda.LayerVersion` that
+This module exports a single class called `KubectlV25Layer` which is a `lambda.LayerVersion` that
 bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line.
 
-> - Helm Version: 3.9.4
-> - Kubectl Version: 1.24.0
-> 
+> - Helm Version: 3.10.3
+> - Kubectl Version: 1.25.0
+>
 
 Usage:
 
 ```ts
 // KubectlLayer bundles the 'kubectl' and 'helm' command lines
-import { KubectlV24Layer } from '@aws-cdk/lambda-layer-kubectl-v24';
+import { KubectlV25Layer } from '@aws-cdk/lambda-layer-kubectl-v25';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 declare const fn: lambda.Function;
-const kubectl = new KubectlV24Layer(this, 'KubectlLayer');
+const kubectl = new KubectlV25Layer(this, 'KubectlLayer');
 fn.addLayers(kubectl);
 ```
 
