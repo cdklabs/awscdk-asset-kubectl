@@ -11,7 +11,7 @@ export class KubectlV25Layer extends lambda.LayerVersion {
       code: lambda.Code.fromAsset(ASSET_FILE, {
         assetHash: assetHash(),
       }),
-      description: '/opt/kubectl/kubectl 1.25; /opt/helm/helm 3.10',
+      description: '/opt/kubectl/kubectl 1.25; /opt/helm/helm 3.11',
       license: 'Apache-2.0',
     });
   }
