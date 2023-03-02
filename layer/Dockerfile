@@ -6,7 +6,7 @@ FROM public.ecr.aws/lambda/provided:latest
 #
 
 ARG KUBECTL_VERSION=1.25.0
-ARG HELM_VERSION=3.10.3
+ARG HELM_VERSION=3.11.1
 
 USER root
 RUN mkdir -p /opt
