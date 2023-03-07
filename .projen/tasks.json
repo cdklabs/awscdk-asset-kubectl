@@ -32,7 +32,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "kubectl-v24"
+        "RELEASE_TAG_PREFIX": "kubectl-v25"
       },
       "steps": [
         {
@@ -299,13 +299,13 @@
         }
       ]
     },
-    "release:kubectl-v24/main": {
-      "name": "release:kubectl-v24/main",
-      "description": "Prepare a release from \"kubectl-v24/main\" branch",
+    "release:kubectl-v25/main": {
+      "name": "release:kubectl-v25/main",
+      "description": "Prepare a release from \"kubectl-v25/main\" branch",
       "env": {
         "RELEASE": "true",
         "MAJOR": "2",
-        "RELEASE_TAG_PREFIX": "kubectl-v24"
+        "RELEASE_TAG_PREFIX": "kubectl-v25"
       },
       "steps": [
         {
@@ -358,7 +358,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "kubectl-v24"
+        "RELEASE_TAG_PREFIX": "kubectl-v25"
       },
       "steps": [
         {

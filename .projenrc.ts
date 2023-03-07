@@ -3,7 +3,7 @@ import { NpmAccess } from 'projen/lib/javascript';
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
 // the version of k8s this branch supports
-const SPEC_VERSION = '24';
+const SPEC_VERSION = '25';
 const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
