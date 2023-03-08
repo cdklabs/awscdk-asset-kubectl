@@ -19,14 +19,8 @@ pull_request_rules:
     actions:
       backport:
         regexes:
-<<<<<<< HEAD
           - kubectl-v(?!20|25)[\d]*\/main
-      label:
-        add:
-=======
-          - kubectl-v(?!20|24)[\d]*\/main
         labels:
->>>>>>> dc8b3b3 (chore: fix mergify auto-approve label (#197))
           - auto-approve
   - name: Automatic merge on approval and successful build
     actions:
