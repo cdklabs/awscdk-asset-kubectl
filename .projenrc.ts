@@ -59,9 +59,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
         actions: {
           backport: {
             regexes: [`kubectl-v(?!20|${SPEC_VERSION})[\\d]*\\/main`],
-          },
-          label: {
-            add: ['auto-approve'],
+            label: {
+              add: ['auto-approve'],
+            },
           },
         },
       }],
