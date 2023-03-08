@@ -19,7 +19,14 @@ pull_request_rules:
     actions:
       backport:
         regexes:
+<<<<<<< HEAD
           - kubectl-v(?!20|22)[\d]*\/main
+=======
+          - kubectl-v(?!20|24)[\d]*\/main
+      label:
+        add:
+          - auto-approve
+>>>>>>> 16465a9 (chore: add auto-approve label to mergify backports (#192))
   - name: Automatic merge on approval and successful build
     actions:
       delete_head_branch: {}
