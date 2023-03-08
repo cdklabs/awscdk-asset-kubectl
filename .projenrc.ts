@@ -68,7 +68,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
 // Fix Docker on GitHub
 new WorkflowNoDockerPatch(project, { workflow: 'build' });
-new WorkflowNoDockerPatch(project, { workflow: 'release', workflowName: 'release-kubectl-v24' });
+new WorkflowNoDockerPatch(project, { workflow: 'release', workflowName: `release-kubectl-v${SPEC_VERSION}` });
 
 project.preCompileTask.exec('layer/build.sh');
 
