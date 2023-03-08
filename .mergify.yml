@@ -20,9 +20,9 @@ pull_request_rules:
       backport:
         regexes:
           - kubectl-v(?!20|24)[\d]*\/main
-      label:
-        add:
-          - auto-approve
+        label:
+          add:
+            - auto-approve
   - name: Automatic merge on approval and successful build
     actions:
       delete_head_branch: {}
