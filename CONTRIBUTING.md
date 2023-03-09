@@ -46,7 +46,8 @@ If you would like to contribute a new Kubectl Asset with a different kubectl ver
 1. Open a new GitHub issue titled `Feature Request: Asset with kubectl vX.Y.Z`. We will track the progress of the new
 Asset in the issue.
 2. If we decide to support the requested version, a maintainer will open a new branch, `kubectl-vY/main`
-(Y is the minor version) and update the issue accordingly.
+(Y is the minor version) and update the issue accordingly. The maintainer will also open a branch called `kubectl.vY`
+in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https://github.com/cdklabs/awscdk-kubectl-go/branches).
 3. Fork the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
 4. Specifically: 
     - change `README.md` to reflect the new versions of kubectl and helm that the asset will include.
