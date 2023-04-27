@@ -42,6 +42,7 @@ junit.xml
 !/.github/workflows/release-kubectl-v24.yml
 !/.github/workflows/upgrade-kubectl-v24-main.yml
 !/.github/pull_request_template.md
+!/.npmrc
 !/test/
 !/tsconfig.dev.json
 !/src/
