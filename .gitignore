@@ -39,9 +39,10 @@ junit.xml
 !/.github/workflows/build.yml
 /dist/changelog.md
 /dist/version.txt
-!/.github/workflows/release-kubectl-v26.yml
-!/.github/workflows/upgrade-kubectl-v26-main.yml
+!/.github/workflows/release-kubectl-v27.yml
+!/.github/workflows/upgrade-kubectl-v27-main.yml
 !/.github/pull_request_template.md
+!/.npmrc
 !/test/
 !/tsconfig.dev.json
 !/src/
