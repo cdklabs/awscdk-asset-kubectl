@@ -138,6 +138,7 @@ permission on the layer version.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.fromLayerVersionArn">fromLayerVersionArn</a></code> | Imports a layer version by ARN. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.fromLayerVersionAttributes">fromLayerVersionAttributes</a></code> | Imports a Layer that has been defined externally. |
@@ -159,6 +160,22 @@ Checks if `x` is a construct.
 - *Type:* any
 
 Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isOwnedResource"></a>
+
+```typescript
+import { KubectlV24Layer } from '@aws-cdk/lambda-layer-kubectl-v24'
+
+KubectlV24Layer.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
 
 ---
 
@@ -249,8 +266,8 @@ the properties of the imported layer.
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.layerVersionArn">layerVersionArn</a></code> | <code>string</code> | The ARN of the Lambda Layer version that this Layer defines. |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
 
 ---
 
@@ -297,18 +314,6 @@ The stack in which this resource is defined.
 
 ---
 
-##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.compatibleRuntimes"></a>
-
-```typescript
-public readonly compatibleRuntimes: Runtime[];
-```
-
-- *Type:* aws-cdk-lib.aws_lambda.Runtime[]
-
-The runtimes compatible with this Layer.
-
----
-
 ##### `layerVersionArn`<sup>Required</sup> <a name="layerVersionArn" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.layerVersionArn"></a>
 
 ```typescript
@@ -318,6 +323,18 @@ public readonly layerVersionArn: string;
 - *Type:* string
 
 The ARN of the Lambda Layer version that this Layer defines.
+
+---
+
+##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.compatibleRuntimes"></a>
+
+```typescript
+public readonly compatibleRuntimes: Runtime[];
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.Runtime[]
+
+The runtimes compatible with this Layer.
 
 ---
 
