@@ -59,8 +59,8 @@ in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https:
     For example, if `KUBECTL_VERSION` is v1.25.0, then `SPEC_VERSION` should be 25.
     - for an example of code changes done for kubectl v1.22.0, see this [PR](https://github.com/cdklabs/awscdk-asset-kubectl/pull/7).
 5. Run `npx projen` to update the github workflows.
-6. Run `yarn:integ:kubectl-asset:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
-Run `yarn:integ:kubectl-asset:snapshot` if `deploy` succeeds and the snapshot does not get updated.
+6. Run `npx projen yarn:integ:kubectl-asset:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
+Run `npx projen yarn:integ:kubectl-asset:snapshot` if `deploy` succeeds and the snapshot does not get updated.
 7. Run `yarn build` to ensure everything builds correctly.
 8. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
 9. A maintainer will review your contribution from there!
