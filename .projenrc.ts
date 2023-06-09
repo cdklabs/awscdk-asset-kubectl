@@ -11,7 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
-  cdkVersion: '2.83.0',
+  cdkVersion: '2.28.0',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
@@ -73,6 +73,7 @@ new WorkflowNoDockerPatch(project, { workflow: 'release', workflowName: `release
 
 project.preCompileTask.exec('layer/build.sh');
 
+// For gitpod users, use jsii/superchain as the dockerImage for the workspace.
 let gitpod = new Gitpod(project, {
   dockerImage: DevEnvironmentDockerImage.fromImage('public.ecr.aws/jsii/superchain:1-buster-slim-node18'),
 });
