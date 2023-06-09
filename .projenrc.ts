@@ -74,7 +74,7 @@ new WorkflowNoDockerPatch(project, { workflow: 'release', workflowName: `release
 project.preCompileTask.exec('layer/build.sh');
 
 // For gitpod users, use jsii/superchain as the dockerImage for the workspace.
-let gitpod = new Gitpod(project, {
+const gitpod = new Gitpod(project, {
   dockerImage: DevEnvironmentDockerImage.fromImage('public.ecr.aws/jsii/superchain:1-buster-slim-node18'),
 });
 
