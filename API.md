@@ -138,7 +138,6 @@ permission on the layer version.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.fromLayerVersionArn">fromLayerVersionArn</a></code> | Imports a layer version by ARN. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.fromLayerVersionAttributes">fromLayerVersionAttributes</a></code> | Imports a Layer that has been defined externally. |
@@ -160,22 +159,6 @@ Checks if `x` is a construct.
 - *Type:* any
 
 Any object.
-
----
-
-##### `isOwnedResource` <a name="isOwnedResource" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isOwnedResource"></a>
-
-```typescript
-import { KubectlV24Layer } from '@aws-cdk/lambda-layer-kubectl-v24'
-
-KubectlV24Layer.isOwnedResource(construct: IConstruct)
-```
-
-Returns true if the construct was created by CDK, and false otherwise.
-
-###### `construct`<sup>Required</sup> <a name="construct" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.isOwnedResource.parameter.construct"></a>
-
-- *Type:* constructs.IConstruct
 
 ---
 
