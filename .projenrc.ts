@@ -1,11 +1,5 @@
-<<<<<<< HEAD:.projenrc.js
-const { awscdk, JsonPatch } = require('projen');
-const { NpmAccess } = require('projen/lib/javascript');
-=======
-import { awscdk, Gitpod, DevEnvironmentDockerImage } from 'projen';
+import { awscdk, Gitpod, DevEnvironmentDockerImage, JsonPatch } from 'projen';
 import { NpmAccess } from 'projen/lib/javascript';
-import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300)):.projenrc.ts
 
 // the version of k8s this branch supports
 const SPEC_VERSION = '23';
@@ -13,13 +7,10 @@ const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
 const project = new awscdk.AwsCdkConstructLibrary({
+  projenrcTs: true,
   author: 'Amazon Web Services',
-<<<<<<< HEAD:.projenrc.js
-  cdkVersion: '2.0.0',
-=======
   authorAddress: 'aws-cdk-dev@amazon.com',
   cdkVersion: '2.28.0',
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300)):.projenrc.ts
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
@@ -85,11 +76,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
 // These patches are required to enable sudo commands in the workflows under `workflowBootstrapSteps`,
 // see `workflowBootstrapSteps` above for why a sudo command is needed.
 const buildWorkflow = project.tryFindObjectFile('.github/workflows/build.yml');
-buildWorkflow.patch(JsonPatch.add('/jobs/build/container/options', '--group-add sudo'));
+buildWorkflow?.patch(JsonPatch.add('/jobs/build/container/options', '--group-add sudo'));
 const releaseWorkflow = project.tryFindObjectFile(`.github/workflows/${releaseWorkflowName}.yml`);
-releaseWorkflow.patch(JsonPatch.add('/jobs/release/container/options', '--group-add sudo'));
+releaseWorkflow?.patch(JsonPatch.add('/jobs/release/container/options', '--group-add sudo'));
 const upgradeWorkflow = project.tryFindObjectFile(`.github/workflows/upgrade-kubectl-v${SPEC_VERSION}-main.yml`);
-upgradeWorkflow.patch(JsonPatch.add('/jobs/upgrade/container/options', '--group-add sudo'));
+upgradeWorkflow?.patch(JsonPatch.add('/jobs/upgrade/container/options', '--group-add sudo'));
 
 project.preCompileTask.exec('layer/build.sh');
 
