@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { awscdk, javascript, JsonPatch } from 'projen';
+=======
+import { awscdk, Gitpod, DevEnvironmentDockerImage } from 'projen';
+import { NpmAccess } from 'projen/lib/javascript';
+import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
+>>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300))
 
 // the version of k8s this branch supports
 const SPEC_VERSION = '21';
@@ -9,7 +15,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.28.0',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
@@ -81,5 +87,15 @@ const upgradeWorkflow = project.tryFindObjectFile(`.github/workflows/upgrade-kub
 upgradeWorkflow.patch(JsonPatch.add('/jobs/upgrade/container/options', '--group-add sudo'));
 
 project.preCompileTask.exec('layer/build.sh');
+
+// For gitpod users, use jsii/superchain as the dockerImage for the workspace.
+const gitpod = new Gitpod(project, {
+  dockerImage: DevEnvironmentDockerImage.fromImage('public.ecr.aws/jsii/superchain:1-buster-slim-node18'),
+});
+
+gitpod.addVscodeExtensions(
+  'dbaeumer.vscode-eslint',
+  'AmazonWebServices.aws-toolkit-vscode',
+);
 
 project.synth();
