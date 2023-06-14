@@ -42,6 +42,7 @@ junit.xml
 !/.github/workflows/release-kubectl-v26.yml
 !/.github/workflows/upgrade-kubectl-v26-main.yml
 !/.github/pull_request_template.md
+!/.npmrc
 !/test/
 !/tsconfig.dev.json
 !/src/
@@ -60,3 +61,4 @@ test/kubectl-layer.integ.snapshot/manifest.json
 test/kubectl-layer.integ.snapshot/**/manifest.json
 test/kubectl-layer.integ.snapshot/tree.json
 test/kubectl-layer.integ.snapshot/**/tree.json
+!/.gitpod.yml

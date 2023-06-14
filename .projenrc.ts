@@ -1,4 +1,4 @@
-import { awscdk } from 'projen';
+import { awscdk, Gitpod, DevEnvironmentDockerImage, ReleasableCommits } from 'projen';
 import { NpmAccess } from 'projen/lib/javascript';
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
@@ -11,7 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.28.0',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
@@ -25,6 +25,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmAccess: NpmAccess.PUBLIC,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
+  // If we don't do this we release the devDependency updates that happen every day, which blows out
+  // our PyPI storage budget even though there aren't any functional changes.
+  releasableCommits: ReleasableCommits.featuresAndFixes(),
   defaultReleaseBranch: defaultReleaseBranchName,
   publishToPypi: {
     distName: `aws-cdk.lambda-layer-kubectl-v${SPEC_VERSION}`,
@@ -72,5 +75,15 @@ new WorkflowNoDockerPatch(project, { workflow: 'build' });
 new WorkflowNoDockerPatch(project, { workflow: 'release', workflowName: `release-kubectl-v${SPEC_VERSION}` });
 
 project.preCompileTask.exec('layer/build.sh');
+
+// For gitpod users, use jsii/superchain as the dockerImage for the workspace.
+const gitpod = new Gitpod(project, {
+  dockerImage: DevEnvironmentDockerImage.fromImage('public.ecr.aws/jsii/superchain:1-buster-slim-node18'),
+});
+
+gitpod.addVscodeExtensions(
+  'dbaeumer.vscode-eslint',
+  'AmazonWebServices.aws-toolkit-vscode',
+);
 
 project.synth();
