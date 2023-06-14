@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-  "Resources": {
-    "KubectlLayer600207B5": {
-      "Type": "AWS::Lambda::LayerVersion",
-      "Properties": {
-        "Content": {
-          "S3Bucket": {
-            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-          },
-          "S3Key": "ebc48a9a74e277f463f78c5a0b3bcf489a891efe25ece75b5b439b9e89bee4ac.zip"
-        },
-        "Description": "/opt/kubectl/kubectl 1.25; /opt/helm/helm 3.11",
-        "LicenseInfo": "Apache-2.0"
-      }
-=======
  "Resources": {
   "KubectlLayer600207B5": {
    "Type": "AWS::Lambda::LayerVersion",
@@ -22,10 +7,9 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "c475180f5b1bbabac165414da13a9b843b111cd3b6d5fae9c954c006640c4064.zip"
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300))
+     "S3Key": "ebc48a9a74e277f463f78c5a0b3bcf489a891efe25ece75b5b439b9e89bee4ac.zip"
     },
-    "Description": "/opt/kubectl/kubectl 1.24; /opt/helm/helm 3.9",
+    "Description": "/opt/kubectl/kubectl 1.25; /opt/helm/helm 3.11",
     "LicenseInfo": "Apache-2.0"
    }
   },

@@ -40,11 +40,7 @@
         }
       }
     },
-<<<<<<< HEAD
-    "1358905c15ea2ca1bbd9608b6f81e4294e27e2da6adeb10bd36ce40d53c8e64c": {
-=======
-    "3dd3bf31f01cb9f458e14cdeeb86c0ddc9c35341fdc797a08a61cbe6ac00482c": {
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300))
+    "f384333531180e144c622f8acf36dfa7a8e83ffa9cb1bc288c0c5e4c3d264c93": {
       "source": {
         "path": "lambda-layer-kubectl-integ-stack.template.json",
         "packaging": "file"
@@ -52,11 +48,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-<<<<<<< HEAD
-          "objectKey": "1358905c15ea2ca1bbd9608b6f81e4294e27e2da6adeb10bd36ce40d53c8e64c.json",
-=======
-          "objectKey": "3dd3bf31f01cb9f458e14cdeeb86c0ddc9c35341fdc797a08a61cbe6ac00482c.json",
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300))
+          "objectKey": "f384333531180e144c622f8acf36dfa7a8e83ffa9cb1bc288c0c5e4c3d264c93.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
