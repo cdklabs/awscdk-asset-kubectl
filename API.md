@@ -213,19 +213,11 @@ the properties of the imported layer.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-<<<<<<< HEAD
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.layerVersionArn">layerVersionArn</a></code> | <code>string</code> | The ARN of the Lambda Layer version that this Layer defines. |
-=======
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.layerVersionArn">layerVersionArn</a></code> | <code>string</code> | The ARN of the Lambda Layer version that this Layer defines. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300))
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
 
 ---
 
@@ -272,23 +264,7 @@ The stack in which this resource is defined.
 
 ---
 
-<<<<<<< HEAD
-##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.compatibleRuntimes"></a>
-
-```typescript
-public readonly compatibleRuntimes: Runtime[];
-```
-
-- *Type:* aws-cdk-lib.aws_lambda.Runtime[]
-
-The runtimes compatible with this Layer.
-
----
-
 ##### `layerVersionArn`<sup>Required</sup> <a name="layerVersionArn" id="@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.layerVersionArn"></a>
-=======
-##### `layerVersionArn`<sup>Required</sup> <a name="layerVersionArn" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.layerVersionArn"></a>
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300))
 
 ```typescript
 public readonly layerVersionArn: string;
@@ -300,7 +276,7 @@ The ARN of the Lambda Layer version that this Layer defines.
 
 ---
 
-##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v24.KubectlV24Layer.property.compatibleRuntimes"></a>
+##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v26.KubectlV26Layer.property.compatibleRuntimes"></a>
 
 ```typescript
 public readonly compatibleRuntimes: Runtime[];
