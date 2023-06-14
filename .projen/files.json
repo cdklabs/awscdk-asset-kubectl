@@ -9,6 +9,7 @@
     ".github/workflows/release-kubectl-v23.yml",
     ".github/workflows/upgrade-kubectl-v23-main.yml",
     ".gitignore",
+    ".gitpod.yml",
     ".mergify.yml",
     ".projen/deps.json",
     ".projen/files.json",
