@@ -60,3 +60,4 @@ test/kubectl-layer.integ.snapshot/manifest.json
 test/kubectl-layer.integ.snapshot/**/manifest.json
 test/kubectl-layer.integ.snapshot/tree.json
 test/kubectl-layer.integ.snapshot/**/tree.json
+!/.gitpod.yml
