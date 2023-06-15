@@ -42,6 +42,7 @@
   },
   "author": {
     "name": "Amazon Web Services",
+    "email": "aws-cdk-dev@amazon.com",
     "organization": false
   },
   "devDependencies": {
