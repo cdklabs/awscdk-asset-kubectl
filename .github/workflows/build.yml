@@ -52,6 +52,7 @@ jobs:
           path: dist
     container:
       image: jsii/superchain:1-buster-slim-node14
+      options: --group-add sudo
   self-mutation:
     needs: build
     runs-on: ubuntu-latest

@@ -37,6 +37,7 @@ jobs:
           path: .repo.patch
     container:
       image: jsii/superchain:1-buster-slim-node14
+      options: --group-add sudo
   pr:
     name: Create Pull Request
     needs: upgrade
