@@ -216,8 +216,8 @@ the properties of the imported layer.
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.layerVersionArn">layerVersionArn</a></code> | <code>string</code> | The ARN of the Lambda Layer version that this Layer defines. |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
 
 ---
 
@@ -264,18 +264,6 @@ The stack in which this resource is defined.
 
 ---
 
-##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.compatibleRuntimes"></a>
-
-```typescript
-public readonly compatibleRuntimes: Runtime[];
-```
-
-- *Type:* aws-cdk-lib.aws_lambda.Runtime[]
-
-The runtimes compatible with this Layer.
-
----
-
 ##### `layerVersionArn`<sup>Required</sup> <a name="layerVersionArn" id="@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.layerVersionArn"></a>
 
 ```typescript
@@ -285,6 +273,18 @@ public readonly layerVersionArn: string;
 - *Type:* string
 
 The ARN of the Lambda Layer version that this Layer defines.
+
+---
+
+##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v21.KubectlLayer.property.compatibleRuntimes"></a>
+
+```typescript
+public readonly compatibleRuntimes: Runtime[];
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.Runtime[]
+
+The runtimes compatible with this Layer.
 
 ---
 
