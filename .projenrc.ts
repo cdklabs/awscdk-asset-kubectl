@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import { awscdk, javascript, JsonPatch } from 'projen';
-=======
-import { awscdk, Gitpod, DevEnvironmentDockerImage } from 'projen';
-import { NpmAccess } from 'projen/lib/javascript';
-import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
->>>>>>> 511e534 (fix: bump min cdk version to 2.28.0 to use node 14 (#300))
+import { awscdk, Gitpod, DevEnvironmentDockerImage, javascript, JsonPatch } from 'projen';
 
 // the version of k8s this branch supports
 const SPEC_VERSION = '22';
