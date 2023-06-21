@@ -1,4 +1,6 @@
-import { awscdk, javascript, JsonPatch } from 'projen';
+import { awscdk, Gitpod, DevEnvironmentDockerImage } from 'projen';
+import { NpmAccess } from 'projen/lib/javascript';
+import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
 // the version of k8s this branch supports
 const SPEC_VERSION = '22';
@@ -9,7 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.28.0',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
@@ -19,15 +21,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
-  workflowBootstrapSteps: [
-    {
-      // This step is required to allow the build workflow to build docker images.
-      name: 'Change permissions on /var/run/docker.sock',
-      run: 'sudo chown superchain /var/run/docker.sock',
-    },
-  ],
   majorVersion: 2,
-  npmAccess: javascript.NpmAccess.PUBLIC,
+  npmAccess: NpmAccess.PUBLIC,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
   defaultReleaseBranch: defaultReleaseBranchName,
@@ -72,15 +67,20 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
 });
 
-// These patches are required to enable sudo commands in the workflows under `workflowBootstrapSteps`,
-// see `workflowBootstrapSteps` above for why a sudo command is needed.
-const buildWorkflow = project.tryFindObjectFile('.github/workflows/build.yml')!;
-buildWorkflow.patch(JsonPatch.add('/jobs/build/container/options', '--group-add sudo'));
-const releaseWorkflow = project.tryFindObjectFile(`.github/workflows/${releaseWorkflowName}.yml`)!;
-releaseWorkflow.patch(JsonPatch.add('/jobs/release/container/options', '--group-add sudo'));
-const upgradeWorkflow = project.tryFindObjectFile(`.github/workflows/upgrade-kubectl-v${SPEC_VERSION}-main.yml`)!;
-upgradeWorkflow.patch(JsonPatch.add('/jobs/upgrade/container/options', '--group-add sudo'));
+// Fix Docker on GitHub
+new WorkflowNoDockerPatch(project, { workflow: 'build' });
+new WorkflowNoDockerPatch(project, { workflow: 'release', workflowName: `release-kubectl-v${SPEC_VERSION}` });
 
 project.preCompileTask.exec('layer/build.sh');
+
+// For gitpod users, use jsii/superchain as the dockerImage for the workspace.
+const gitpod = new Gitpod(project, {
+  dockerImage: DevEnvironmentDockerImage.fromImage('public.ecr.aws/jsii/superchain:1-buster-slim-node18'),
+});
+
+gitpod.addVscodeExtensions(
+  'dbaeumer.vscode-eslint',
+  'AmazonWebServices.aws-toolkit-vscode',
+);
 
 project.synth();
