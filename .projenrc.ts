@@ -1,4 +1,4 @@
-import { awscdk, Gitpod, DevEnvironmentDockerImage } from 'projen';
+import { awscdk, Gitpod, DevEnvironmentDockerImage, release } from 'projen';
 import { NpmAccess } from 'projen/lib/javascript';
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
@@ -26,6 +26,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
   defaultReleaseBranch: defaultReleaseBranchName,
+
+  // Releasing every day or every commit is too much -- we're blowing through our PyPI max size allotment if we do that
+  // There's also no real need to. Release every 2 weeks instead (the 1st and 15th of every month)
+  releaseTrigger: release.ReleaseTrigger.scheduled({
+    schedule: '0 12 1,15 * *',
+  }),
+
   publishToPypi: {
     distName: `aws-cdk.lambda-layer-kubectl-v${SPEC_VERSION}`,
     module: `aws_cdk.lambda_layer_kubectl_v${SPEC_VERSION}`,
