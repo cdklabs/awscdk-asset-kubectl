@@ -1,4 +1,4 @@
-import { awscdk, Gitpod, DevEnvironmentDockerImage } from 'projen';
+import { awscdk, Gitpod, DevEnvironmentDockerImage, ReleasableCommits } from 'projen';
 import { NpmAccess } from 'projen/lib/javascript';
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
@@ -25,6 +25,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmAccess: NpmAccess.PUBLIC,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
+  // If we don't do this we release the devDependency updates that happen every day, which blows out
+  // our PyPI storage budget even though there aren't any functional changes.
+  releasableCommits: ReleasableCommits.featuresAndFixes(),
   defaultReleaseBranch: defaultReleaseBranchName,
   publishToPypi: {
     distName: `aws-cdk.lambda-layer-kubectl-v${SPEC_VERSION}`,
