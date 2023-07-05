@@ -1,6 +1,6 @@
 {
-  "name": "@aws-cdk/lambda-layer-kubectl-v26",
-  "description": "A Lambda Layer that contains kubectl v1.26",
+  "name": "@aws-cdk/lambda-layer-kubectl-v27",
+  "description": "A Lambda Layer that contains kubectl v1.27",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/awscdk-asset-kubectl.git"
@@ -31,7 +31,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
-    "release:kubectl-v26/main": "npx projen release:kubectl-v26/main",
+    "release:kubectl-v27/main": "npx projen release:kubectl-v27/main",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
@@ -134,23 +134,23 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "software.amazon.awscdk.cdk.lambdalayer.kubectl.v26",
+        "package": "software.amazon.awscdk.cdk.lambdalayer.kubectl.v27",
         "maven": {
           "groupId": "software.amazon.awscdk",
-          "artifactId": "cdk-lambda-layer-kubectl-v26"
+          "artifactId": "cdk-lambda-layer-kubectl-v27"
         }
       },
       "python": {
-        "distName": "aws-cdk.lambda-layer-kubectl-v26",
-        "module": "aws_cdk.lambda_layer_kubectl_v26"
+        "distName": "aws-cdk.lambda-layer-kubectl-v27",
+        "module": "aws_cdk.lambda_layer_kubectl_v27"
       },
       "dotnet": {
-        "namespace": "Amazon.CDK.LambdaLayer.KubectlV26",
-        "packageId": "Amazon.CDK.LambdaLayer.KubectlV26"
+        "namespace": "Amazon.CDK.LambdaLayer.KubectlV27",
+        "packageId": "Amazon.CDK.LambdaLayer.KubectlV27"
       },
       "go": {
         "moduleName": "github.com/cdklabs/awscdk-kubectl-go",
-        "packageName": "kubectlv26"
+        "packageName": "kubectlv27"
       }
     },
     "tsc": {
