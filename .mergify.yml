@@ -16,11 +16,11 @@ pull_request_rules:
   - name: backport patches to kubectl-v21+ branches
     conditions:
       - label=backport-to-kubectl-v21+
-      - base=kubectl-v26/main
+      - base=kubectl-v27/main
     actions:
       backport:
         regexes:
-          - kubectl-v(?!20|26)[\d]*\/main
+          - kubectl-v(?!20|27)[\d]*\/main
         labels:
           - auto-approve
   - name: Automatic merge on approval and successful build
