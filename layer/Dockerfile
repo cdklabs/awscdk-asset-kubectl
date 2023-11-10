@@ -1,5 +1,5 @@
 # base lambda image
-FROM public.ecr.aws/lambda/provided:latest
+FROM public.ecr.aws/lambda/provided:alami.2023.11.09.14
 
 #
 # versions
