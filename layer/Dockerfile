@@ -1,5 +1,5 @@
 # base lambda image
-FROM public.ecr.aws/lambda/provided:alami.2023.11.09.14
+FROM public.ecr.aws/lambda/provided:latest
 
 #
 # versions
@@ -16,8 +16,8 @@ WORKDIR /tmp
 # tools
 #
 
-RUN yum update -y \
-    && yum install -y zip unzip wget tar gzip
+RUN dnf update -y \
+    && dnf install -y zip unzip wget tar gzip
 
 #
 # kubectl
