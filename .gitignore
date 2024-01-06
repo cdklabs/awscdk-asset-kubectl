@@ -32,7 +32,6 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-!/.projenrc.js
 /test-reports/
 junit.xml
 /coverage/
@@ -61,3 +60,4 @@ test/kubectl-layer.integ.snapshot/**/manifest.json
 test/kubectl-layer.integ.snapshot/tree.json
 test/kubectl-layer.integ.snapshot/**/tree.json
 !/.gitpod.yml
+!/.projenrc.ts

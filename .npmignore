@@ -24,3 +24,4 @@ tsconfig.tsbuildinfo
 !.jsii
 test/.tmp
 test/kubectl-layer.integ.snapshot
+/.gitattributes
