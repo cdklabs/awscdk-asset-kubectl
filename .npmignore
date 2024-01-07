@@ -25,3 +25,4 @@ tsconfig.tsbuildinfo
 test/.tmp
 test/kubectl-layer.integ.snapshot
 /.gitattributes
+/.projenrc.ts
