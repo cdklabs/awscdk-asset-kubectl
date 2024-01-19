@@ -21,6 +21,17 @@ const project = new awscdk.AwsCdkConstructLibrary({
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
+  // We support the last 3 minor versions just like Kubernetes
+  depsUpgradeOptions: {
+    workflowOptions: {
+      branches: [
+        `kubectl-v${SPEC_VERSION}/main`,
+        `kubectl-v${Number(SPEC_VERSION)-1}/main`,
+        `kubectl-v${Number(SPEC_VERSION)-2}/main`,
+      ],
+      labels: ['auto-approve'],
+    },
+  },
   majorVersion: 2,
   npmAccess: NpmAccess.PUBLIC,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,

@@ -40,6 +40,8 @@ junit.xml
 /dist/version.txt
 !/.github/workflows/release-kubectl-v28.yml
 !/.github/workflows/upgrade-kubectl-v28-main.yml
+!/.github/workflows/upgrade-kubectl-v27-main.yml
+!/.github/workflows/upgrade-kubectl-v26-main.yml
 !/.github/pull_request_template.md
 !/test/
 !/tsconfig.dev.json

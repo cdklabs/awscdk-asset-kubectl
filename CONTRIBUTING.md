@@ -8,6 +8,13 @@ information to effectively respond to your bug report or contribution.
 
 Specifically, if you wish to contribute a new Kubectl Asset with a different kubectl version, jump to [Contributing a new Kubectl Asset](#contributing-a-new-kubectl-asset).
 
+## Supported Versions
+
+Similar to [kubernetes](https://kubernetes.io/releases/), we support the most recent three minor versions.
+This means that we continue to upgrade dependencies for the most recent three versions.
+
+We also plan to have the default branch of this repository to be the latest released version. If that is
+not the case, please raise a GitHub Issue with us!
 
 ## Reporting Bugs/Feature Requests
 
@@ -64,6 +71,7 @@ Run `npx projen integ:kubectl-layer:snapshot` if `deploy` succeeds and the snaps
 7. Run `yarn build` to ensure everything builds correctly.
 8. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
 9. A maintainer will review your contribution from there!
+10. ⚠️ IMPORTANT ⚠️ The maintainer should go into the repository settings and update the default branch to the new, latest version.
 
 ## Backporting changes to branches with different Kubectl versions
 This repository consists of multiple branches, with each branch corresponding to a specific Kubectl version.
