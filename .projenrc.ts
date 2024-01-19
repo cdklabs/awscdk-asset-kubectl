@@ -21,7 +21,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
-  // we support the current default version and 3 prior versions just like Kubernetes
+  // @e support the last 3 minor versions just like Kubernetes
   depsUpgradeOptions: {
     workflowOptions: {
       branches: [
