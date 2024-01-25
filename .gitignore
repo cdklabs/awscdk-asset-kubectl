@@ -32,7 +32,6 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-!/.projenrc.js
 /test-reports/
 junit.xml
 /coverage/
@@ -42,7 +41,6 @@ junit.xml
 !/.github/workflows/release-kubectl-v27.yml
 !/.github/workflows/upgrade-kubectl-v27-main.yml
 !/.github/pull_request_template.md
-!/.npmrc
 !/test/
 !/tsconfig.dev.json
 !/src/
@@ -62,3 +60,4 @@ test/kubectl-layer.integ.snapshot/**/manifest.json
 test/kubectl-layer.integ.snapshot/tree.json
 test/kubectl-layer.integ.snapshot/**/tree.json
 !/.gitpod.yml
+!/.projenrc.ts
