@@ -7,7 +7,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "2873922b2920bdb6f113a1deaf12a0572a881113a1d89d7b328db438adead07f.zip"
+     "S3Key": "90a45dcd5d165e02a5d7f8274612601e5a66bd34ee37df17f542fd00cb10b62b.zip"
     },
     "Description": "/opt/kubectl/kubectl 1.26; /opt/helm/helm 3.11",
     "LicenseInfo": "Apache-2.0"
