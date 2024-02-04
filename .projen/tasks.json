@@ -32,7 +32,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "kubectl-v28",
+        "RELEASE_TAG_PREFIX": "kubectl-v29",
         "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+'"
       },
       "steps": [
@@ -319,13 +319,13 @@
         }
       ]
     },
-    "release:kubectl-v28/main": {
-      "name": "release:kubectl-v28/main",
-      "description": "Prepare a release from \"kubectl-v28/main\" branch",
+    "release:kubectl-v29/main": {
+      "name": "release:kubectl-v29/main",
+      "description": "Prepare a release from \"kubectl-v29/main\" branch",
       "env": {
         "RELEASE": "true",
         "MAJOR": "2",
-        "RELEASE_TAG_PREFIX": "kubectl-v28"
+        "RELEASE_TAG_PREFIX": "kubectl-v29"
       },
       "steps": [
         {
@@ -378,7 +378,7 @@
         "CHANGELOG": "dist/changelog.md",
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
-        "RELEASE_TAG_PREFIX": "kubectl-v28",
+        "RELEASE_TAG_PREFIX": "kubectl-v29",
         "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+'"
       },
       "steps": [
