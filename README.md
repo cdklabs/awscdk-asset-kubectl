@@ -14,7 +14,7 @@ bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) a
 [`helm`](https://helm.sh/) command line.
 
 > - Helm Version: 3.14.0
-> - Kubectl Version: 1.29.3
+> - Kubectl Version: 1.29.1
 >
 
 Usage:
