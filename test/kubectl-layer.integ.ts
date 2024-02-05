@@ -3,7 +3,7 @@ import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as cr from 'aws-cdk-lib/custom-resources';
 
-import { KubectlV29Layer } from '../lib';
+import { KubectlV29Layer } from '../src';
 
 /**
  * Test verifies that kubectl and helm are invoked successfully inside Lambda runtime.

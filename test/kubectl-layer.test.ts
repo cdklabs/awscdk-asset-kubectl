@@ -1,6 +1,6 @@
 import { Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { KubectlV29Layer } from '../lib';
+import { KubectlV29Layer } from '../src';
 
 test('synthesized to a layer version', () => {
   // GIVEN
