@@ -42,7 +42,7 @@ A CDK Asset construct that contains `kubectl` and `helm`.
 #### Initializers <a name="Initializers" id="@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.Initializer"></a>
 
 ```typescript
-import { Kubectlv29Layer } from '@aws-cdk/lambda-layer-kubectl-v29'
+import { KubectlV29Layer } from '@aws-cdk/lambda-layer-kubectl-v29'
 
 new KubectlV29Layer(scope: Construct, id: string)
 ```
