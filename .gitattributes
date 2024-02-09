@@ -7,10 +7,10 @@
 /.github/workflows/auto-approve.yml linguist-generated
 /.github/workflows/build.yml linguist-generated
 /.github/workflows/pull-request-lint.yml linguist-generated
-/.github/workflows/release-kubectl-v28.yml linguist-generated
-/.github/workflows/upgrade-kubectl-v26-main.yml linguist-generated
+/.github/workflows/release-kubectl-v29.yml linguist-generated
 /.github/workflows/upgrade-kubectl-v27-main.yml linguist-generated
 /.github/workflows/upgrade-kubectl-v28-main.yml linguist-generated
+/.github/workflows/upgrade-kubectl-v29-main.yml linguist-generated
 /.gitignore linguist-generated
 /.gitpod.yml linguist-generated
 /.mergify.yml linguist-generated
