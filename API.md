@@ -13,8 +13,8 @@ This module exports a single class called `KubectlV29Layer` which is a `lambda.L
 bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line.
 
-> - Helm Version: 3.14.0
-> - Kubectl Version: 1.29.1
+> - Helm Version: 3.14.2
+> - Kubectl Version: 1.29.2
 >
 
 Usage:
@@ -138,6 +138,7 @@ permission on the layer version.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.fromLayerVersionArn">fromLayerVersionArn</a></code> | Imports a layer version by ARN. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.fromLayerVersionAttributes">fromLayerVersionAttributes</a></code> | Imports a Layer that has been defined externally. |
@@ -159,6 +160,22 @@ Checks if `x` is a construct.
 - *Type:* any
 
 Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.isOwnedResource"></a>
+
+```typescript
+import { KubectlV29Layer } from '@aws-cdk/lambda-layer-kubectl-v29'
+
+KubectlV29Layer.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@aws-cdk/lambda-layer-kubectl-v29.KubectlV29Layer.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
 
 ---
 
