@@ -26,3 +26,4 @@ test/.tmp
 test/kubectl-layer.integ.snapshot
 /.gitattributes
 /.projenrc.ts
+/projenrc

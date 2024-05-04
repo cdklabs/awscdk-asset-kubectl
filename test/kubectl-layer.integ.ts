@@ -16,7 +16,8 @@ const layer = new KubectlV29Layer(stack, 'KubectlLayer');
 const runtimes = [
   lambda.Runtime.PYTHON_3_8,
   lambda.Runtime.PYTHON_3_9,
-
+  lambda.Runtime.PYTHON_3_10,
+  lambda.Runtime.PYTHON_3_11,
 ];
 
 for (const runtime of runtimes) {
