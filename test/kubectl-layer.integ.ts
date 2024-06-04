@@ -2,20 +2,37 @@ import * as path from 'path';
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as cr from 'aws-cdk-lib/custom-resources';
+import { IConstruct } from 'constructs';
 
-import { KubectlV29Layer } from '../lib';
+import { KubectlV30Layer } from '../lib';
+
+/**
+ * override the framework.onEvent lambda function runtime from nodejs14.x to nodejs16.x
+ * as nodejs14.x is deprecated.
+ */
+function overrideProviderRuntime(construct?: IConstruct[]) {
+  construct?.forEach(c => {
+    if (cdk.CfnResource.isCfnResource(c) && c.cfnResourceType === 'AWS::Lambda::Function'
+      && (c as lambda.CfnFunction).runtime === 'nodejs14.x') {
+      (c as lambda.CfnFunction).runtime = 'nodejs16.x';
+    } else {
+      overrideProviderRuntime(c.node.children);
+    }
+  });
+}
 
 /**
  * Test verifies that kubectl and helm are invoked successfully inside Lambda runtime.
  */
-
 const app = new cdk.App();
 const stack = new cdk.Stack(app, 'lambda-layer-kubectl-integ-stack');
-const layer = new KubectlV29Layer(stack, 'KubectlLayer');
+const layer = new KubectlV30Layer(stack, 'KubectlLayer');
 
 const runtimes = [
-  lambda.Runtime.PYTHON_3_7,
   lambda.Runtime.PYTHON_3_9,
+  new lambda.Runtime('python3.10', lambda.RuntimeFamily.PYTHON),
+  new lambda.Runtime('python3.11', lambda.RuntimeFamily.PYTHON),
+  new lambda.Runtime('python3.12', lambda.RuntimeFamily.PYTHON),
 ];
 
 for (const runtime of runtimes) {
@@ -33,6 +50,8 @@ for (const runtime of runtimes) {
   new cdk.CustomResource(stack, `CustomResource${runtime.name}`, {
     serviceToken: provider.serviceToken,
   });
+
+  overrideProviderRuntime([stack]);
 }
 
 app.synth();
