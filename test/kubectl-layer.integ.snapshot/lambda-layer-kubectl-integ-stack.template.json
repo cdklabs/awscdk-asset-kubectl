@@ -7,13 +7,13 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "b5925bba477fd1ac27c3a695a9f6ece293bd0ae6940bc65a5b99008ab54f60f7.zip"
+     "S3Key": "2266ac05f7e1f3dbecd7349c1f994abb28703d561d08d58f559927e0d31817d4.zip"
     },
-    "Description": "/opt/kubectl/kubectl 1.29; /opt/helm/helm 3.14",
+    "Description": "/opt/kubectl/kubectl 1.29.4; /opt/helm/helm 3.14.4",
     "LicenseInfo": "Apache-2.0"
    }
   },
-  "Lambdapython37ServiceRoleB5A704D4": {
+  "Lambdapython38ServiceRoleCF609288": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -44,7 +44,7 @@
     ]
    }
   },
-  "Lambdapython3780349E0A": {
+  "Lambdapython38588938B9": {
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
@@ -53,12 +53,6 @@
      },
      "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
     },
-    "Role": {
-     "Fn::GetAtt": [
-      "Lambdapython37ServiceRoleB5A704D4",
-      "Arn"
-     ]
-    },
     "Handler": "index.handler",
     "Layers": [
      {
@@ -66,14 +60,20 @@
      }
     ],
     "MemorySize": 512,
-    "Runtime": "python3.7",
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython38ServiceRoleCF609288",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.8",
     "Timeout": 30
    },
    "DependsOn": [
-    "Lambdapython37ServiceRoleB5A704D4"
+    "Lambdapython38ServiceRoleCF609288"
    ]
   },
-  "Providerpython37frameworkonEventServiceRole9EA6B2B0": {
+  "Providerpython38frameworkonEventServiceRole59CE2CA7": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -104,7 +104,7 @@
     ]
    }
   },
-  "Providerpython37frameworkonEventServiceRoleDefaultPolicyA9099DC2": {
+  "Providerpython38frameworkonEventServiceRoleDefaultPolicy1666A4D6": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -115,7 +115,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "Lambdapython3780349E0A",
+          "Lambdapython38588938B9",
           "Arn"
          ]
         },
@@ -125,7 +125,7 @@
           [
            {
             "Fn::GetAtt": [
-             "Lambdapython3780349E0A",
+             "Lambdapython38588938B9",
              "Arn"
             ]
            },
@@ -138,55 +138,55 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "Providerpython37frameworkonEventServiceRoleDefaultPolicyA9099DC2",
+    "PolicyName": "Providerpython38frameworkonEventServiceRoleDefaultPolicy1666A4D6",
     "Roles": [
      {
-      "Ref": "Providerpython37frameworkonEventServiceRole9EA6B2B0"
+      "Ref": "Providerpython38frameworkonEventServiceRole59CE2CA7"
      }
     ]
    }
   },
-  "Providerpython37frameworkonEvent3AA4F69E": {
+  "Providerpython38frameworkonEvent3059CDF1": {
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "eaeb69bc290b516fe3b049f89d6118b22249df682fbabf56af300cf345198574.zip"
+     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
     },
-    "Role": {
-     "Fn::GetAtt": [
-      "Providerpython37frameworkonEventServiceRole9EA6B2B0",
-      "Arn"
-     ]
-    },
-    "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.7)",
+    "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.8)",
     "Environment": {
      "Variables": {
       "USER_ON_EVENT_FUNCTION_ARN": {
        "Fn::GetAtt": [
-        "Lambdapython3780349E0A",
+        "Lambdapython38588938B9",
         "Arn"
        ]
       }
      }
     },
     "Handler": "framework.onEvent",
-    "Runtime": "nodejs14.x",
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython38frameworkonEventServiceRole59CE2CA7",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
     "Timeout": 900
    },
    "DependsOn": [
-    "Providerpython37frameworkonEventServiceRoleDefaultPolicyA9099DC2",
-    "Providerpython37frameworkonEventServiceRole9EA6B2B0"
+    "Providerpython38frameworkonEventServiceRoleDefaultPolicy1666A4D6",
+    "Providerpython38frameworkonEventServiceRole59CE2CA7"
    ]
   },
-  "CustomResourcepython37": {
+  "CustomResourcepython38": {
    "Type": "AWS::CloudFormation::CustomResource",
    "Properties": {
     "ServiceToken": {
      "Fn::GetAtt": [
-      "Providerpython37frameworkonEvent3AA4F69E",
+      "Providerpython38frameworkonEvent3059CDF1",
       "Arn"
      ]
     }
@@ -234,12 +234,6 @@
      },
      "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
     },
-    "Role": {
-     "Fn::GetAtt": [
-      "Lambdapython39ServiceRoleE2CFED77",
-      "Arn"
-     ]
-    },
     "Handler": "index.handler",
     "Layers": [
      {
@@ -247,6 +241,12 @@
      }
     ],
     "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython39ServiceRoleE2CFED77",
+      "Arn"
+     ]
+    },
     "Runtime": "python3.9",
     "Timeout": 30
    },
@@ -334,13 +334,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "eaeb69bc290b516fe3b049f89d6118b22249df682fbabf56af300cf345198574.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "Providerpython39frameworkonEventServiceRoleA299F5C1",
-      "Arn"
-     ]
+     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
     },
     "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.9)",
     "Environment": {
@@ -354,7 +348,13 @@
      }
     },
     "Handler": "framework.onEvent",
-    "Runtime": "nodejs14.x",
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython39frameworkonEventServiceRoleA299F5C1",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
     "Timeout": 900
    },
    "DependsOn": [
@@ -368,6 +368,368 @@
     "ServiceToken": {
      "Fn::GetAtt": [
       "Providerpython39frameworkonEvent00AFA742",
+      "Arn"
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Lambdapython310ServiceRoleD185E0B6": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Lambdapython310815BD7E9": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
+    },
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "KubectlLayer600207B5"
+     }
+    ],
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython310ServiceRoleD185E0B6",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.10",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "Lambdapython310ServiceRoleD185E0B6"
+   ]
+  },
+  "Providerpython310frameworkonEventServiceRoleB6DF2879": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Providerpython310frameworkonEventServiceRoleDefaultPolicyC0E8697B": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "Lambdapython310815BD7E9",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "Lambdapython310815BD7E9",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "Providerpython310frameworkonEventServiceRoleDefaultPolicyC0E8697B",
+    "Roles": [
+     {
+      "Ref": "Providerpython310frameworkonEventServiceRoleB6DF2879"
+     }
+    ]
+   }
+  },
+  "Providerpython310frameworkonEvent7294D715": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
+    },
+    "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.10)",
+    "Environment": {
+     "Variables": {
+      "USER_ON_EVENT_FUNCTION_ARN": {
+       "Fn::GetAtt": [
+        "Lambdapython310815BD7E9",
+        "Arn"
+       ]
+      }
+     }
+    },
+    "Handler": "framework.onEvent",
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython310frameworkonEventServiceRoleB6DF2879",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "Providerpython310frameworkonEventServiceRoleDefaultPolicyC0E8697B",
+    "Providerpython310frameworkonEventServiceRoleB6DF2879"
+   ]
+  },
+  "CustomResourcepython310": {
+   "Type": "AWS::CloudFormation::CustomResource",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Providerpython310frameworkonEvent7294D715",
+      "Arn"
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "Lambdapython311ServiceRoleB063EF97": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Lambdapython311020B8AC7": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
+    },
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "KubectlLayer600207B5"
+     }
+    ],
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython311ServiceRoleB063EF97",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.11",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "Lambdapython311ServiceRoleB063EF97"
+   ]
+  },
+  "Providerpython311frameworkonEventServiceRoleAEC610C5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "Providerpython311frameworkonEventServiceRoleDefaultPolicyF13D93DB": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "Lambdapython311020B8AC7",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "Lambdapython311020B8AC7",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "Providerpython311frameworkonEventServiceRoleDefaultPolicyF13D93DB",
+    "Roles": [
+     {
+      "Ref": "Providerpython311frameworkonEventServiceRoleAEC610C5"
+     }
+    ]
+   }
+  },
+  "Providerpython311frameworkonEvent29915103": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
+    },
+    "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.11)",
+    "Environment": {
+     "Variables": {
+      "USER_ON_EVENT_FUNCTION_ARN": {
+       "Fn::GetAtt": [
+        "Lambdapython311020B8AC7",
+        "Arn"
+       ]
+      }
+     }
+    },
+    "Handler": "framework.onEvent",
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython311frameworkonEventServiceRoleAEC610C5",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "Providerpython311frameworkonEventServiceRoleDefaultPolicyF13D93DB",
+    "Providerpython311frameworkonEventServiceRoleAEC610C5"
+   ]
+  },
+  "CustomResourcepython311": {
+   "Type": "AWS::CloudFormation::CustomResource",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "Providerpython311frameworkonEvent29915103",
       "Arn"
      ]
     }

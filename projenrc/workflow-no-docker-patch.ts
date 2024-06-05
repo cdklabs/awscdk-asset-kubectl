@@ -22,7 +22,7 @@ export class WorkflowNoDockerPatch {
       JsonPatch.add(`/jobs/${workflow}/steps/`, {
         name: 'Setup Node.js',
         uses: 'actions/setup-node@v3',
-        with: { 'node-version': project.minNodeVersion ?? '14.x' },
+        with: { 'node-version': project.minNodeVersion ?? '16.x' },
       }),
       JsonPatch.remove(`/jobs/${workflow}/container`),
     );
