@@ -2,24 +2,7 @@ import * as path from 'path';
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as cr from 'aws-cdk-lib/custom-resources';
-import { IConstruct } from 'constructs';
-
 import { KubectlV30Layer } from '../lib';
-
-/**
- * override the framework.onEvent lambda function runtime from nodejs14.x to nodejs16.x
- * as nodejs14.x is deprecated.
- */
-function overrideProviderRuntime(construct?: IConstruct[]) {
-  construct?.forEach(c => {
-    if (cdk.CfnResource.isCfnResource(c) && c.cfnResourceType === 'AWS::Lambda::Function'
-      && (c as lambda.CfnFunction).runtime === 'nodejs14.x') {
-      (c as lambda.CfnFunction).runtime = 'nodejs16.x';
-    } else {
-      overrideProviderRuntime(c.node.children);
-    }
-  });
-}
 
 /**
  * Test verifies that kubectl and helm are invoked successfully inside Lambda runtime.
@@ -51,7 +34,6 @@ for (const runtime of runtimes) {
     serviceToken: provider.serviceToken,
   });
 
-  overrideProviderRuntime([stack]);
 }
 
 app.synth();
