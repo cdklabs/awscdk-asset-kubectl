@@ -7,6 +7,7 @@
     ".github/workflows/build.yml",
     ".github/workflows/pull-request-lint.yml",
     ".github/workflows/release-kubectl-v29.yml",
+    ".github/workflows/upgrade-kubectl-v20-main.yml",
     ".github/workflows/upgrade-kubectl-v27-main.yml",
     ".github/workflows/upgrade-kubectl-v28-main.yml",
     ".github/workflows/upgrade-kubectl-v29-main.yml",
