@@ -22,9 +22,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   autoApproveUpgrades: true,
   // We support the last 3 minor versions just like Kubernetes
+  // We also need to keep supporting v20 since it is a hard dependency of aws-cdk-lib
   depsUpgradeOptions: {
     workflowOptions: {
       branches: [
+        `kubectl-v20/main`, // this must be supported because aws-cdk-lib depends on it
         `kubectl-v${SPEC_VERSION}/main`,
         `kubectl-v${Number(SPEC_VERSION)-1}/main`,
         `kubectl-v${Number(SPEC_VERSION)-2}/main`,
