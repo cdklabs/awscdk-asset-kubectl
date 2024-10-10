@@ -27,6 +27,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // our PyPI storage budget even though there aren't any functional changes.
   releasableCommits: ReleasableCommits.featuresAndFixes(),
   defaultReleaseBranch: defaultReleaseBranchName,
+  jsiiVersion: '5.5.x',
+  typescriptVersion: '5.5.x',
   publishToPypi: {
     distName: `aws-cdk.asset-kubectl-v${SPEC_VERSION}`,
     module: `aws_cdk.asset_kubectl_v${SPEC_VERSION}`,
