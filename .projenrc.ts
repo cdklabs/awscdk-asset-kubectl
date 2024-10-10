@@ -26,7 +26,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   depsUpgradeOptions: {
     workflowOptions: {
       branches: [
-        `kubectl-v20/main`, // this must be supported because aws-cdk-lib depends on it
+        'kubectl-v20/main', // this must be supported because aws-cdk-lib depends on it
         `kubectl-v${SPEC_VERSION}/main`,
         `kubectl-v${Number(SPEC_VERSION)-1}/main`,
         `kubectl-v${Number(SPEC_VERSION)-2}/main`,
