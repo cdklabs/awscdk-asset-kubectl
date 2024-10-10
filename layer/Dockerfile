@@ -18,8 +18,8 @@ WORKDIR /tmp
 # tools
 #
 
-RUN yum update -y \
-    && yum install -y zip unzip wget tar gzip
+RUN dnf update -y \
+    && dnf install -y zip unzip wget tar gzip
 
 #
 # kubectl
