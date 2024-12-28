@@ -1195,9 +1195,9 @@ available-typed-arrays@^1.0.7:
     possible-typed-array-names "^1.0.0"
 
 aws-cdk-lib@^2.0.0:
-  version "2.173.3"
-  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.173.3.tgz#a329470b9c1b61773239622a30b4c07ddf596123"
-  integrity sha512-AarLLLZK07R8SnMo0rrUDlmRuTIkhZpFmxjY2u62jzqALW88VKkEZcC9Yt9i/7yzUHnya7SbC84KTNNfJEVc1A==
+  version "2.173.4"
+  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.173.4.tgz#a690ea79e976e86c761e118fd055aa24a51b7852"
+  integrity sha512-0reN94TzkWmyVZDDBlYB4qzJUig8wTHEe82YLHlWRUhrU78fT+drVGUr+lYZwwETaZ+8fLdCOl9ULvFNq7iczQ==
   dependencies:
     "@aws-cdk/asset-awscli-v1" "^2.2.208"
     "@aws-cdk/asset-kubectl-v20" "^2.1.3"
@@ -1216,9 +1216,9 @@ aws-cdk-lib@^2.0.0:
     yaml "1.10.2"
 
 aws-cdk@^2:
-  version "2.173.3"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.173.3.tgz#39203ea8829482616bcd7074c0d3671ae1c6dcdf"
-  integrity sha512-i+PFFA1FRvnOKXwRpTxDNmDKgDMM38ZbGpsX3x883DgX/a7DcEzoZtzjSMo1ZEp34NN4GzHVubjvjr7Ek8CQlA==
+  version "2.173.4"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.173.4.tgz#a4805cfdf2e9b50297e18271bf506e40a0cda706"
+  integrity sha512-zgs3xU28VEKIwHwJHu0ZHeoEmwLGnHS2jPCMc2MsIMZu+a7CKyE77Tw6LwJkuuB96BQyqr6xJB3SbeWjXmcFhQ==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -5405,9 +5405,9 @@ typescript@5.5.x, typescript@~5.5:
   integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
 
 typescript@next:
-  version "5.8.0-dev.20241226"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20241226.tgz#c8da564ae7a501ec2783f1ff44d961aba282a34a"
-  integrity sha512-iCURPPeEk/3s4iAKjDRXeu43qXtZy+EdsYSKkBIP2txhkLg78It2J9AOjJCfhiUNUIKuzgHC7P0tgtEI7p+xrw==
+  version "5.8.0-dev.20241227"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20241227.tgz#21e2292a9c58dde7976b401ef783cfccd0f68ff7"
+  integrity sha512-bE8kzViIOFzVMwx3NfOAiPgmiX1k7kYPNULBYZW+obKGr/Y+zU7FFOcqYloyipMAWmUOLpzP9z545DJWxOCX8Q==
 
 uglify-js@^3.1.4:
   version "3.19.3"
