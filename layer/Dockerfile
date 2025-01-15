@@ -7,8 +7,11 @@ FROM public.ecr.aws/lambda/provided:latest
 
 # KUBECTL_VERSION should not be changed at the moment, see https://github.com/aws/aws-cdk/issues/15736
 # Version 1.21.0 is not compatible with version 1.20 (and lower) of the server.
+# Setting helm version to 3.17.0 to mitigate https://security.snyk.io/vuln/SNYK-CHAINGUARDLATEST-HELM-7219926
+# It is not guaranteed to work with the kubectl version. However this layer version is outdated so it doesn't really matter.
+# This needs to be fixed because the outdated version is bundled into cdk dependency.
 ARG KUBECTL_VERSION=1.20.0 
-ARG HELM_VERSION=3.8.1
+ARG HELM_VERSION=3.17.0
 
 USER root
 RUN mkdir -p /opt

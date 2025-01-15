@@ -15,7 +15,7 @@ This module bundles the
 `ASSET_FILE` and `LAYER_SOURCE_DIR` that can be consumed via the cdk `Asset`
 construct.
 
-> - Helm Version: 3.8.1
+> - Helm Version: 3.17.0
 > - Kubectl Version: 1.20.0
 > 
 
