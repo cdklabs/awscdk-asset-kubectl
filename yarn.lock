@@ -37,9 +37,9 @@
   integrity sha512-7bY3J8GCVxLupn/kNmpPc5VJz8grx+4RKfnnJiO1LG+uxkZfANZG3RMHhE+qQxxwkyQ9/MfPtTpf748UhR425A==
 
 "@aws-cdk/cloud-assembly-schema@^39.2.0":
-  version "39.2.14"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-39.2.14.tgz#bcb0f9634e1388e558df5279794ef09f55ed78ef"
-  integrity sha512-G6hudyROAI95rdsKjhOkt3pPC54yx2rqkadeqk5e/xnSX+4NgixK36HJ8giVYNUVFtP12GUeFsQ8NC4ME3GgYg==
+  version "39.2.15"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-39.2.15.tgz#e869dd3c76c9d093ecf27fe3378fbae64b7d958e"
+  integrity sha512-roeUKO5QR9JLnNEULg0RiS1ac6PZ9qsPaOcAJXCP0D1NLLECdxwwqJvLbhV91pCWrGTeWY5OhLtlL5OPS6Ycvg==
   dependencies:
     jsonschema "~1.4.1"
     semver "^7.7.1"
@@ -1443,9 +1443,9 @@ camelcase@^6.2.0, camelcase@^6.3.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001688:
-  version "1.0.30001696"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001696.tgz#00c30a2fc11e3c98c25e5125418752af3ae2f49f"
-  integrity sha512-pDCPkvzfa39ehJtJ+OwGT/2yvT2SbjfHhiIW2LWOAcMQ7BzwxT/XuyUp4OTOd0XFWA6BKw0JalnBHgSi5DGJBQ==
+  version "1.0.30001697"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001697.tgz#040bbbb54463c4b4b3377c716b34a322d16e6fc7"
+  integrity sha512-GwNPlWJin8E+d7Gxq96jxM6w0w+VFeyyXRsjU58emtkYqnbwHqXm5uT2uCmO0RQE9htWknOP4xtBlLmM/gWxvQ==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -2047,9 +2047,9 @@ emoji-regex@^8.0.0:
   integrity sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
 
 enhanced-resolve@^5.15.0:
-  version "5.18.0"
-  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.18.0.tgz#91eb1db193896b9801251eeff1c6980278b1e404"
-  integrity sha512-0/r0MySGYG8YqlayBZ6MuCfECmHFdJ5qyPh8s8wa5Hnm6SaFLSK1VYCbj+NKp090Nm1caZhD+QTnmxO7esYGyQ==
+  version "5.18.1"
+  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.18.1.tgz#728ab082f8b7b6836de51f1637aab5d3b9568faf"
+  integrity sha512-ZSW3ma5GkcQBIpwZTSRAI8N71Uuwgs93IezB7mf7R60tC8ZbJideoDNKjHn2O9KIlx6rkGTTEk1xUCK2E1Y2Yg==
   dependencies:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
@@ -3785,9 +3785,9 @@ jsii-diff@^1.106.0:
     yargs "^16.2.0"
 
 jsii-docgen@^10.5.0:
-  version "10.6.5"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.6.5.tgz#9de1c417d6244a441d1dd7edc0e526ffe5cc13fe"
-  integrity sha512-LAvOtHhB2I7bsnGriNqqAtpJzdMIvdWypEFq1DzTRVyv1slyZ+bGFUMQFUDDQ8gojJPEkXwkeKflT0M7r9b31A==
+  version "10.6.6"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-10.6.6.tgz#3e2412b236f1ffe71f35fc5981b5be764e7418a2"
+  integrity sha512-1MSnIDb+J+AadV1pjKsGGZOCsFLYfUNCRVfz1jSm5bH0htpquG5ohYb6oqJiHQC2k/+sizfHAzy8Ry/3mQr9iA==
   dependencies:
     "@jsii/spec" "^1.106.0"
     case "^1.6.3"
@@ -3795,7 +3795,7 @@ jsii-docgen@^10.5.0:
     glob "^8.1.0"
     glob-promise "^6.0.7"
     jsii-reflect "^1.106.0"
-    semver "^7.7.0"
+    semver "^7.7.1"
     yargs "^16.2.0"
 
 jsii-pacmak@^1.106.0:
@@ -4557,10 +4557,10 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-projen@^0.91.7:
-  version "0.91.7"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.91.7.tgz#7a1bca77dcc70d0c93df34d41d04a9f6623d1a9b"
-  integrity sha512-HECW1Q/0TzS1fKVGpobr/fcLAHRWGfaOL7GmLAmwh0enhcmeE0Tld5kjyb8Sj+q3Hf0KdWP8lufuQ0WxltYcYQ==
+projen@^0.91.8:
+  version "0.91.8"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.91.8.tgz#7fd8d2bf614fbfd3f44efdf223783786ebc55b31"
+  integrity sha512-TWpxSiv3ZkJoZ2Y0hjnjwmKLlUnxmbPANmQ8yDdUeE6LIYoPmfU0Zw0ijNDI3uTq0BjIz5mFDkic94RW/1Hguw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -4571,7 +4571,7 @@ projen@^0.91.7:
     fast-json-patch "^3.1.1"
     glob "^8"
     ini "^2.0.0"
-    semver "^7.7.0"
+    semver "^7.7.1"
     shx "^0.3.4"
     xmlbuilder2 "^3.1.1"
     yaml "^2.2.2"
@@ -5514,9 +5514,9 @@ typescript@5.5.x, typescript@~5.5:
   integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
 
 typescript@next:
-  version "5.8.0-dev.20250203"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20250203.tgz#b2529d4dc28edd0fa34b87c0615d6aba60c96816"
-  integrity sha512-7uBe1WQtxSnGGcxEqyP9vgCySQbLHmQaRXDjPK8UF32VVjhXBJZmcq1ti4zKy3mldZG59pdo6hQkhJhqZG2Zhw==
+  version "5.8.0-dev.20250204"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20250204.tgz#ec45236fa9179078723bb9eee9d8631ba39607e6"
+  integrity sha512-v8AzZf6U6QRetLje7DEKQCSZfTNqPgrCw93oFB/Li4lb4nZ/630SU6ytE5Lb7j9Sm4DVr+I1qLFicG1eANIQ4w==
 
 uglify-js@^3.1.4:
   version "3.19.3"
