@@ -24,7 +24,12 @@ RUN dnf update -y \
 #
 
 RUN mkdir -p /opt/kubectl
-RUN cd /opt/kubectl && curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
+RUN cd /opt/kubectl && curl -LO "https://dl.k8s.io/v${KUBECTL_VERSION}/kubernetes-client-linux-amd64.tar.gz"
+RUN cd /opt/kubectl \
+    && tar -xzf kubernetes-client-linux-amd64.tar.gz \
+    && mv kubernetes/client/bin/kubectl . \
+    && rm -rf kubernetes \
+    && rm kubernetes-client-linux-amd64.tar.gz
 RUN chmod +x /opt/kubectl/kubectl
 
 #
