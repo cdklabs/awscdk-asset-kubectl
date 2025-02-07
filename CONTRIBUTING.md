@@ -47,14 +47,9 @@ If you would like to contribute a new Kubectl Asset with a different kubectl ver
 1. Open a new GitHub issue titled `Feature Request: Asset with kubectl vX.Y.Z`. We will track the progress of the new
 Asset in the issue.
 2. If we decide to support the requested version, a maintainer will open a new branch, `kubectl-vY/main`
-<<<<<<< HEAD
-(Y is the minor version) and update the issue accordingly.
-3. Fork the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
-=======
 (Y is the minor version) and update the issue accordingly. The maintainer will also open a branch called `kubectl.vY`
 in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https://github.com/cdklabs/awscdk-kubectl-go/branches).
 3. Create a fork of the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
->>>>>>> df72d91 (fix: refine the new version release process (#1620))
 4. Specifically: 
     - change `README.md` to reflect the new versions of kubectl and helm that the asset will include.
     - change `KUBECTL_VERSION` and `HELM_VERSION` in `layer/Dockerfile` to reflect the new versions.
@@ -63,15 +58,6 @@ in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https:
     `KUBECTL_VERSION` is v1.20.x, then the `HELM_VERSION` should be v3.8.x.
     - change `SPEC_VERSION` in `.projenrc.js` to reflect the new minor version of kubectl.
     For example, if `KUBECTL_VERSION` is v1.25.0, then `SPEC_VERSION` should be 25.
-<<<<<<< HEAD
-    - for an example of code changes done for kubectl v1.22.0, see this [PR](https://github.com/cdklabs/awscdk-asset-kubectl/pull/7).
-5. Run `npx projen` to update the github workflows.
-6. Run `yarn:integ:kubectl-asset:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
-Run `yarn:integ:kubectl-asset:snapshot` if `deploy` succeeds and the snapshot does not get updated.
-7. Run `yarn build` to ensure everything builds correctly.
-8. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
-9. A maintainer will review your contribution from there!
-=======
     - change the Kubectl Lambda layer class in `src/kubectl-layer.ts` to `KubectlV##Layer`, and its `description` field to reflect the latest versions of Kubectl and Helm being supported.
     - change `test/kubectl-layer.test.ts` to reflect the new construct's name (changed in the previous step) and that the description
     verifies the correct versions of Kubectl and Helm.
@@ -100,7 +86,6 @@ a mergify comment:
 ```
 @Mergifyio backport kubectl-v21/main kubectl-v22/main
 ```
->>>>>>> df72d91 (fix: refine the new version release process (#1620))
 
 ## Finding contributions to work on
 Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.

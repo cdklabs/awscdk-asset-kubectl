@@ -26,11 +26,7 @@ RUN dnf update -y \
 #
 
 RUN mkdir -p /opt/kubectl
-<<<<<<< HEAD
-RUN cd /opt/kubectl && curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
-=======
 RUN cd /opt/kubectl && curl -LO "https://dl.k8s.io/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
->>>>>>> df72d91 (fix: refine the new version release process (#1620))
 RUN chmod +x /opt/kubectl/kubectl
 RUN /opt/kubectl/kubectl config view
 
