@@ -53,6 +53,12 @@
      },
      "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
     },
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython39ServiceRoleE2CFED77",
+      "Arn"
+     ]
+    },
     "Handler": "index.handler",
     "Layers": [
      {
@@ -60,12 +66,6 @@
      }
     ],
     "MemorySize": 512,
-    "Role": {
-     "Fn::GetAtt": [
-      "Lambdapython39ServiceRoleE2CFED77",
-      "Arn"
-     ]
-    },
     "Runtime": "python3.9",
     "Timeout": 30
    },
@@ -153,7 +153,13 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
+     "S3Key": "8e3d635893ea17fa3158623489cd42c680fad925b38de1ef51cb10d84f6e245e.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython39frameworkonEventServiceRoleA299F5C1",
+      "Arn"
+     ]
     },
     "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.9)",
     "Environment": {
@@ -167,13 +173,15 @@
      }
     },
     "Handler": "framework.onEvent",
-    "Role": {
-     "Fn::GetAtt": [
-      "Providerpython39frameworkonEventServiceRoleA299F5C1",
-      "Arn"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "DefaultCrNodeVersionMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
      ]
     },
-    "Runtime": "nodejs18.x",
     "Timeout": 900
    },
    "DependsOn": [
@@ -234,6 +242,12 @@
      },
      "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
     },
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython310ServiceRoleD185E0B6",
+      "Arn"
+     ]
+    },
     "Handler": "index.handler",
     "Layers": [
      {
@@ -241,12 +255,6 @@
      }
     ],
     "MemorySize": 512,
-    "Role": {
-     "Fn::GetAtt": [
-      "Lambdapython310ServiceRoleD185E0B6",
-      "Arn"
-     ]
-    },
     "Runtime": "python3.10",
     "Timeout": 30
    },
@@ -334,7 +342,13 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
+     "S3Key": "8e3d635893ea17fa3158623489cd42c680fad925b38de1ef51cb10d84f6e245e.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython310frameworkonEventServiceRoleB6DF2879",
+      "Arn"
+     ]
     },
     "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.10)",
     "Environment": {
@@ -348,13 +362,15 @@
      }
     },
     "Handler": "framework.onEvent",
-    "Role": {
-     "Fn::GetAtt": [
-      "Providerpython310frameworkonEventServiceRoleB6DF2879",
-      "Arn"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "DefaultCrNodeVersionMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
      ]
     },
-    "Runtime": "nodejs18.x",
     "Timeout": 900
    },
    "DependsOn": [
@@ -415,6 +431,12 @@
      },
      "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
     },
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython311ServiceRoleB063EF97",
+      "Arn"
+     ]
+    },
     "Handler": "index.handler",
     "Layers": [
      {
@@ -422,12 +444,6 @@
      }
     ],
     "MemorySize": 512,
-    "Role": {
-     "Fn::GetAtt": [
-      "Lambdapython311ServiceRoleB063EF97",
-      "Arn"
-     ]
-    },
     "Runtime": "python3.11",
     "Timeout": 30
    },
@@ -515,7 +531,13 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
+     "S3Key": "8e3d635893ea17fa3158623489cd42c680fad925b38de1ef51cb10d84f6e245e.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython311frameworkonEventServiceRoleAEC610C5",
+      "Arn"
+     ]
     },
     "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.11)",
     "Environment": {
@@ -529,13 +551,15 @@
      }
     },
     "Handler": "framework.onEvent",
-    "Role": {
-     "Fn::GetAtt": [
-      "Providerpython311frameworkonEventServiceRoleAEC610C5",
-      "Arn"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "DefaultCrNodeVersionMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
      ]
     },
-    "Runtime": "nodejs18.x",
     "Timeout": 900
    },
    "DependsOn": [
@@ -596,6 +620,12 @@
      },
      "S3Key": "134b81dc12f7bd57e63ba8a0ab049586c8a5e07e7afce1e400dc6e1319e9abfb.zip"
     },
+    "Role": {
+     "Fn::GetAtt": [
+      "Lambdapython312ServiceRoleAEE8F417",
+      "Arn"
+     ]
+    },
     "Handler": "index.handler",
     "Layers": [
      {
@@ -603,12 +633,6 @@
      }
     ],
     "MemorySize": 512,
-    "Role": {
-     "Fn::GetAtt": [
-      "Lambdapython312ServiceRoleAEE8F417",
-      "Arn"
-     ]
-    },
     "Runtime": "python3.12",
     "Timeout": 30
    },
@@ -696,7 +720,13 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f2d30cfc360482320a52a4fcde8a70f3569df79ab30be24650fda58eb60052cf.zip"
+     "S3Key": "8e3d635893ea17fa3158623489cd42c680fad925b38de1ef51cb10d84f6e245e.zip"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "Providerpython312frameworkonEventServiceRoleA5AFFB7F",
+      "Arn"
+     ]
     },
     "Description": "AWS CDK resource provider framework - onEvent (lambda-layer-kubectl-integ-stack/Providerpython3.12)",
     "Environment": {
@@ -710,13 +740,15 @@
      }
     },
     "Handler": "framework.onEvent",
-    "Role": {
-     "Fn::GetAtt": [
-      "Providerpython312frameworkonEventServiceRoleA5AFFB7F",
-      "Arn"
+    "Runtime": {
+     "Fn::FindInMap": [
+      "DefaultCrNodeVersionMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
      ]
     },
-    "Runtime": "nodejs18.x",
     "Timeout": 900
    },
    "DependsOn": [
@@ -736,6 +768,109 @@
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
+  }
+ },
+ "Mappings": {
+  "DefaultCrNodeVersionMap": {
+   "af-south-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-east-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-northeast-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-northeast-2": {
+    "value": "nodejs16.x"
+   },
+   "ap-northeast-3": {
+    "value": "nodejs16.x"
+   },
+   "ap-south-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-south-2": {
+    "value": "nodejs16.x"
+   },
+   "ap-southeast-1": {
+    "value": "nodejs16.x"
+   },
+   "ap-southeast-2": {
+    "value": "nodejs16.x"
+   },
+   "ap-southeast-3": {
+    "value": "nodejs16.x"
+   },
+   "ca-central-1": {
+    "value": "nodejs16.x"
+   },
+   "cn-north-1": {
+    "value": "nodejs16.x"
+   },
+   "cn-northwest-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-central-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-central-2": {
+    "value": "nodejs16.x"
+   },
+   "eu-north-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-south-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-south-2": {
+    "value": "nodejs16.x"
+   },
+   "eu-west-1": {
+    "value": "nodejs16.x"
+   },
+   "eu-west-2": {
+    "value": "nodejs16.x"
+   },
+   "eu-west-3": {
+    "value": "nodejs16.x"
+   },
+   "me-central-1": {
+    "value": "nodejs16.x"
+   },
+   "me-south-1": {
+    "value": "nodejs16.x"
+   },
+   "sa-east-1": {
+    "value": "nodejs16.x"
+   },
+   "us-east-1": {
+    "value": "nodejs16.x"
+   },
+   "us-east-2": {
+    "value": "nodejs16.x"
+   },
+   "us-gov-east-1": {
+    "value": "nodejs16.x"
+   },
+   "us-gov-west-1": {
+    "value": "nodejs16.x"
+   },
+   "us-iso-east-1": {
+    "value": "nodejs14.x"
+   },
+   "us-iso-west-1": {
+    "value": "nodejs14.x"
+   },
+   "us-isob-east-1": {
+    "value": "nodejs14.x"
+   },
+   "us-west-1": {
+    "value": "nodejs16.x"
+   },
+   "us-west-2": {
+    "value": "nodejs16.x"
+   }
   }
  },
  "Parameters": {
