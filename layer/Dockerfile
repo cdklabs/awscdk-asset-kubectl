@@ -24,13 +24,9 @@ RUN dnf update -y \
 #
 
 RUN mkdir -p /opt/kubectl
-RUN cd /opt/kubectl && curl -LO "https://dl.k8s.io/v${KUBECTL_VERSION}/kubernetes-client-linux-amd64.tar.gz"
-RUN cd /opt/kubectl \
-    && tar -xzf kubernetes-client-linux-amd64.tar.gz \
-    && mv kubernetes/client/bin/kubectl . \
-    && rm -rf kubernetes \
-    && rm kubernetes-client-linux-amd64.tar.gz
+RUN cd /opt/kubectl && curl -LO "https://dl.k8s.io/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
 RUN chmod +x /opt/kubectl/kubectl
+RUN /opt/kubectl/kubectl config view
 
 #
 # helm
@@ -38,6 +34,7 @@ RUN chmod +x /opt/kubectl/kubectl
 
 RUN mkdir -p /tmp/helm && wget -qO- https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz | tar -xvz -C /tmp/helm
 RUN mkdir -p /opt/helm && cp /tmp/helm/linux-amd64/helm /opt/helm/helm
+RUN /opt/helm/helm version
 
 #
 # create the bundle
