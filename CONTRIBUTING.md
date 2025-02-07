@@ -77,7 +77,7 @@ When it succeeds, confirm that the snapshot in `test/kubectl-layer.integ.snapsho
 8. Run `yarn build` to ensure everything builds correctly.
 9. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
 10. A maintainer will review your contribution from there!
-11. ⚠️ **IMPORTANT FOR THE MAINTAINER** ⚠️ The maintainer should go into the repository settings and update the default branch to this new, latest version that has just been merged in. This is because GitHub only runs actions on default branches, and we want to ensure dependencies are updated in the latest version + the previous X versions.
+11. ⚠️ **IMPORTANT FOR THE MAINTAINER** ⚠️ The maintainer should go into the repository settings and update the default branch to this new, latest version that has just been merged in. This is because GitHub only runs actions on default branches, and we want to ensure dependencies are updated in the latest version + the previous 3 versions.
 
 ## Backporting changes to branches with different Kubectl versions
 This repository consists of multiple branches, with each branch corresponding to a specific Kubectl version.
