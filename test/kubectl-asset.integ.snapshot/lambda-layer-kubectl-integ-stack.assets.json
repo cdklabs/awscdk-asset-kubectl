@@ -1,15 +1,25 @@
 {
   "version": "39.0.0",
   "files": {
+<<<<<<< HEAD:test/kubectl-asset.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
     "e35d06c04a5f086530cad7876451b9fbd93ded1d4940950bb104fb78dd322310": {
       "source": {
         "path": "asset.e35d06c04a5f086530cad7876451b9fbd93ded1d4940950bb104fb78dd322310.zip",
+=======
+    "25c16d2ab30e35800b3ea63c44c93deb85584076eb09a2db9f971803252b22dc": {
+      "source": {
+        "path": "asset.25c16d2ab30e35800b3ea63c44c93deb85584076eb09a2db9f971803252b22dc.zip",
+>>>>>>> df72d91 (fix: refine the new version release process (#1620)):test/kubectl-layer.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
         "packaging": "file"
       },
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+<<<<<<< HEAD:test/kubectl-asset.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
           "objectKey": "e35d06c04a5f086530cad7876451b9fbd93ded1d4940950bb104fb78dd322310.zip",
+=======
+          "objectKey": "25c16d2ab30e35800b3ea63c44c93deb85584076eb09a2db9f971803252b22dc.zip",
+>>>>>>> df72d91 (fix: refine the new version release process (#1620)):test/kubectl-layer.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
@@ -40,7 +50,11 @@
         }
       }
     },
+<<<<<<< HEAD:test/kubectl-asset.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
     "21d30098cf067779a2bddc9166908f6186b94fea01993db44eed81c57bac00de": {
+=======
+    "7882ca118e3a2f5939a8a41074d7d57d3101e17ac73da6a7f49d8804ae0ee51c": {
+>>>>>>> df72d91 (fix: refine the new version release process (#1620)):test/kubectl-layer.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
       "source": {
         "path": "lambda-layer-kubectl-integ-stack.template.json",
         "packaging": "file"
@@ -48,7 +62,11 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+<<<<<<< HEAD:test/kubectl-asset.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
           "objectKey": "21d30098cf067779a2bddc9166908f6186b94fea01993db44eed81c57bac00de.json",
+=======
+          "objectKey": "7882ca118e3a2f5939a8a41074d7d57d3101e17ac73da6a7f49d8804ae0ee51c.json",
+>>>>>>> df72d91 (fix: refine the new version release process (#1620)):test/kubectl-layer.integ.snapshot/lambda-layer-kubectl-integ-stack.assets.json
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
