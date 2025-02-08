@@ -12,6 +12,11 @@ queue_rules:
       - status-success=package-python
       - status-success=package-dotnet
       - status-success=package-go
+    merge_method: squash
+    commit_message_template: |-
+      {{ title }} (#{{ number }})
+
+      {{ body }}
 pull_request_rules:
   - name: backport patches to kubectl-v21+ branches
     conditions:
@@ -27,12 +32,7 @@ pull_request_rules:
     actions:
       delete_head_branch: {}
       queue:
-        method: squash
         name: default
-        commit_message_template: |-
-          {{ title }} (#{{ number }})
-
-          {{ body }}
     conditions:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
