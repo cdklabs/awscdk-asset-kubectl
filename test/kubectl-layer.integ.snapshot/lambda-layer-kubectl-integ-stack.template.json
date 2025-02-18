@@ -9,7 +9,7 @@
      },
      "S3Key": "bf90d3130a5975853500064ac9781484a679d171b5d763e02144668b9fe0b5d2.zip"
     },
-    "Description": "/opt/kubectl/kubectl 1.30; /opt/helm/helm 3.15",
+    "Description": "/opt/kubectl/kubectl 1.30; /opt/helm/helm 3.17.1",
     "LicenseInfo": "Apache-2.0"
    }
   },
