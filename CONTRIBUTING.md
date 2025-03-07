@@ -52,11 +52,17 @@ If you would like to contribute a new Kubectl Asset with a different kubectl ver
 
 1. Open a new GitHub issue titled `Feature Request: Asset with kubectl vX.Y.Z`. We will track the progress of the new
 Asset in the issue.
-2. If we decide to support the requested version, a maintainer will open a new branch, `kubectl-vY/main`
-(Y is the minor version) and update the issue accordingly. The maintainer will also open a branch called `kubectl.vY`
-in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https://github.com/cdklabs/awscdk-kubectl-go/branches).
-3. Create a fork of the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
-4. Specifically: 
+2. If we decide to support the requested version, a maintainer will create the new version by running the `bump.sh`
+script, providing in the latest versions of kubectl and helm. For example, if bumping from Kubectl version 1.32.x,
+alongside Helm version 3.17.x, run the script as such:
+```shell
+./bump.sh 32 17
+```
+Alternatively, they could follow these legacy steps:
+  1. Open a new branch, `kubectl-vY/main` (Y is the minor version) and update the issue accordingly. The maintainer will also open a 
+branch called `kubectl.vY`in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https://github.com/cdklabs/awscdk-kubectl-go/branches).
+  2. Create a fork of the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
+  3. Specifically: 
     - change `README.md` to reflect the new versions of kubectl and helm that the asset will include.
     - change `KUBECTL_VERSION` and `HELM_VERSION` in `layer/Dockerfile` to reflect the new versions.
     The `HELM_VERSION` you select should be the highest version compatible with the `KUBECTL_VERSION`
@@ -69,15 +75,15 @@ in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https:
     verifies the correct versions of Kubectl and Helm.
     - change `test/kubectl-layer.integ.ts` to reflect the new construct's name (changed in the previous step).
     - for an example of code changes done for Kubectl v1.22.0, see this [PR](https://github.com/cdklabs/awscdk-asset-kubectl/pull/7).
-5. Run `npx projen compile` to generate the Lambda layer constructs that will be tested.
-6. Run `npx projen` to update the github workflows.
-7. Run `npx projen integ:kubectl-layer:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
+  4. Run `npx projen compile` to generate the Lambda layer constructs that will be tested.
+  5. Run `npx projen` to update the github workflows.
+  6. Run `npx projen integ:kubectl-layer:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
 This stage _must succeed_ before proceeding. 
 When it succeeds, confirm that the snapshot in `test/kubectl-layer.integ.snapshot` has been updated. If not, run `npx projen integ:kubectl-layer:snapshot` to update it.
-8. Run `yarn build` to ensure everything builds correctly.
-9. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
-10. A maintainer will review your contribution from there!
-11. ⚠️ **IMPORTANT FOR THE MAINTAINER** ⚠️ The maintainer should go into the repository settings and update the default branch to this new, latest version that has just been merged in. This is because GitHub only runs actions on default branches, and we want to ensure dependencies are updated in the latest version + the previous 3 versions.
+  7. Run `yarn build` to ensure everything builds correctly.
+  8. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
+3. A maintainer will review your contribution from there!
+4. ⚠️ **IMPORTANT FOR THE MAINTAINER** ⚠️ The maintainer should go into the repository settings and update the default branch to this new, latest version that has just been merged in. This is because GitHub only runs actions on default branches, and we want to ensure dependencies are updated in the latest version + the previous 3 versions.
 
 ## Backporting changes to branches with different Kubectl versions
 This repository consists of multiple branches, with each branch corresponding to a specific Kubectl version.
