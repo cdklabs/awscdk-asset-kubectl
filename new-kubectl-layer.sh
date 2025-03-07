@@ -98,6 +98,9 @@ if ! yarn build; then
 fi
 
 # Remind user to make a new branch in go library as well
+echo "Please visit $(tput setaf 3)https://github.com/cdklabs/awscdk-asset-kubectl/branches$(tput sgr0) and create a new branch titled '$(tput setaf 3)kubectl-v$1/main$(tput sgr0)'."
+read -p "Press Enter to continue..."
+
 echo "Please visit $(tput setaf 3)https://github.com/cdklabs/awscdk-kubectl-go/branches$(tput sgr0) and create a new branch titled '$(tput setaf 3)kubectl.$1$(tput sgr0)'."
 read -p "Press Enter to continue..."
 
