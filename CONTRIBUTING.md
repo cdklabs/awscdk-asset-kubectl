@@ -59,29 +59,29 @@ alongside Helm version 3.17.x, run the script as such:
 ./bump.sh 32 17
 ```
 Alternatively, they could follow these legacy steps:
-  a. Open a new branch, `kubectl-vY/main` (Y is the minor version) and update the issue accordingly. The maintainer will also open a 
+    1. Open a new branch, `kubectl-vY/main` (Y is the minor version) and update the issue accordingly. The maintainer will also open a 
 branch called `kubectl.vY`in the corresponding go binding repository, [`cdklabs/awscdk-kubectl-go`](https://github.com/cdklabs/awscdk-kubectl-go/branches).
-  b. Create a fork of the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
-  c. Specifically: 
-    - change `README.md` to reflect the new versions of kubectl and helm that the asset will include.
-    - change `KUBECTL_VERSION` and `HELM_VERSION` in `layer/Dockerfile` to reflect the new versions.
+    2. Create a fork of the repository and fetch the `kubectl-vY/main` branch locally, and modify the source off of that.
+    3. Specifically: 
+        - change `README.md` to reflect the new versions of kubectl and helm that the asset will include.
+        - change `KUBECTL_VERSION` and `HELM_VERSION` in `layer/Dockerfile` to reflect the new versions.
     The `HELM_VERSION` you select should be the highest version compatible with the `KUBECTL_VERSION`
     according to the helm [docs](https://helm.sh/docs/topics/version_skew/). For example, if
     `KUBECTL_VERSION` is v1.20.x, then the `HELM_VERSION` should be v3.8.x.
-    - change `SPEC_VERSION` in `.projenrc.js` to reflect the new minor version of kubectl.
+        - change `SPEC_VERSION` in `.projenrc.js` to reflect the new minor version of kubectl.
     For example, if `KUBECTL_VERSION` is v1.25.0, then `SPEC_VERSION` should be 25.
-    - change the Kubectl Lambda layer class in `src/kubectl-layer.ts` to `KubectlV##Layer`, and its `description` field to reflect the latest versions of Kubectl and Helm being supported.
-    - change `test/kubectl-layer.test.ts` to reflect the new construct's name (changed in the previous step) and that the description
+        - change the Kubectl Lambda layer class in `src/kubectl-layer.ts` to `KubectlV##Layer`, and its `description` field to reflect the latest versions of Kubectl and Helm being supported.
+        - change `test/kubectl-layer.test.ts` to reflect the new construct's name (changed in the previous step) and that the description
     verifies the correct versions of Kubectl and Helm.
-    - change `test/kubectl-layer.integ.ts` to reflect the new construct's name (changed in the previous step).
-    - for an example of code changes done for Kubectl v1.22.0, see this [PR](https://github.com/cdklabs/awscdk-asset-kubectl/pull/7).
-  d. Run `npx projen compile` to generate the Lambda layer constructs that will be tested.
-  e. Run `npx projen` to update the github workflows.
-  f. Run `npx projen integ:kubectl-layer:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
-This stage _must succeed_ before proceeding. 
-When it succeeds, confirm that the snapshot in `test/kubectl-layer.integ.snapshot` has been updated. If not, run `npx projen integ:kubectl-layer:snapshot` to update it.
-  g. Run `yarn build` to ensure everything builds correctly.
-  h. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
+        - change `test/kubectl-layer.integ.ts` to reflect the new construct's name (changed in the previous step).
+        - for an example of code changes done for Kubectl v1.22.0, see this [PR](https://github.com/cdklabs/awscdk-asset-kubectl/pull/7).
+    4. Run `npx projen compile` to generate the Lambda layer constructs that will be tested.
+    5. Run `npx projen` to update the github workflows.
+    6. Run `npx projen integ:kubectl-layer:deploy` to ensure that the new versions in the Dockerfile can be successfully downloaded.
+    This stage _must succeed_ before proceeding. 
+    When it succeeds, confirm that the snapshot in `test/kubectl-layer.integ.snapshot` has been updated. If not, run `npx projen integ:kubectl-layer:snapshot` to update it.
+    7. Run `yarn build` to ensure everything builds correctly.
+    8. Commit to your fork and submit a pull request to the repository, _ensuring that you are targeting the correct `kubectl-vY/main` branch_.
 3. A maintainer will review your contribution from there!
 4. ⚠️ **IMPORTANT FOR THE MAINTAINER** ⚠️ The maintainer should go into the repository settings and update the default branch to this new, latest version that has just been merged in. This is because GitHub only runs actions on default branches, and we want to ensure dependencies are updated in the latest version + the previous 3 versions.
 
