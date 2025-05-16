@@ -13,8 +13,8 @@ This module exports a single class called `KubectlV31Layer` which is a `lambda.L
 bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line.
 
-> - Helm Version: 3.17.1
-> - Kubectl Version: 1.31.0
+> - Helm Version: 3.17.2
+> - Kubectl Version: 1.32.3
 >
 
 Usage:
