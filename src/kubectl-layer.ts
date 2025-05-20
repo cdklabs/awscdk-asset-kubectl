@@ -5,13 +5,13 @@ import { assetHash, ASSET_FILE } from './_asset';
 /**
  * A CDK Asset construct that contains `kubectl` and `helm`.
  */
-export class KubectlV32Layer extends lambda.LayerVersion {
+export class KubectlV33Layer extends lambda.LayerVersion {
   constructor(scope: Construct, id: string) {
     super(scope, id, {
       code: lambda.Code.fromAsset(ASSET_FILE, {
         assetHash: assetHash(),
       }),
-      description: '/opt/kubectl/kubectl 1.32.3; /opt/helm/helm 3.17.2',
+      description: '/opt/kubectl/kubectl 1.33.0; /opt/helm/helm 3.18.0',
       license: 'Apache-2.0',
     });
   }

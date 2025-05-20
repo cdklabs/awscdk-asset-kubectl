@@ -1,6 +1,6 @@
 {
-  "name": "@aws-cdk/lambda-layer-kubectl-v32",
-  "description": "A Lambda Layer that contains kubectl v1.32",
+  "name": "@aws-cdk/lambda-layer-kubectl-v33",
+  "description": "A Lambda Layer that contains kubectl v1.33",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/awscdk-asset-kubectl.git"
@@ -31,7 +31,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
-    "release:kubectl-v32/main": "npx projen release:kubectl-v32/main",
+    "release:kubectl-v33/main": "npx projen release:kubectl-v33/main",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
@@ -132,23 +132,23 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "software.amazon.awscdk.cdk.lambdalayer.kubectl.v32",
+        "package": "software.amazon.awscdk.cdk.lambdalayer.kubectl.v33",
         "maven": {
           "groupId": "software.amazon.awscdk",
-          "artifactId": "cdk-lambda-layer-kubectl-v32"
+          "artifactId": "cdk-lambda-layer-kubectl-v33"
         }
       },
       "python": {
-        "distName": "aws-cdk.lambda-layer-kubectl-v32",
-        "module": "aws_cdk.lambda_layer_kubectl_v32"
+        "distName": "aws-cdk.lambda-layer-kubectl-v33",
+        "module": "aws_cdk.lambda_layer_kubectl_v33"
       },
       "dotnet": {
-        "namespace": "Amazon.CDK.LambdaLayer.KubectlV32",
-        "packageId": "Amazon.CDK.LambdaLayer.KubectlV32"
+        "namespace": "Amazon.CDK.LambdaLayer.KubectlV33",
+        "packageId": "Amazon.CDK.LambdaLayer.KubectlV33"
       },
       "go": {
         "moduleName": "github.com/cdklabs/awscdk-kubectl-go",
-        "packageName": "kubectlv32"
+        "packageName": "kubectlv33"
       }
     },
     "tsc": {
