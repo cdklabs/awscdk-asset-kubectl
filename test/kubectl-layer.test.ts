@@ -1,16 +1,16 @@
 import { Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { KubectlV32Layer } from '../lib';
+import { KubectlV33Layer } from '../lib';
 
 test('synthesized to a layer version', () => {
   // GIVEN
   const stack = new Stack();
 
   // WHEN
-  new KubectlV32Layer(stack, 'MyLayer');
+  new KubectlV33Layer(stack, 'MyLayer');
 
   // THEN
   Template.fromStack(stack).hasResourceProperties('AWS::Lambda::LayerVersion', {
-    Description: '/opt/kubectl/kubectl 1.32.3; /opt/helm/helm 3.17.2',
+    Description: '/opt/kubectl/kubectl 1.33.0; /opt/helm/helm 3.18.0',
   });
 });
