@@ -50,7 +50,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     javaPackage: `software.amazon.awscdk.cdk.lambdalayer.kubectl.v${SPEC_VERSION}`,
     mavenGroupId: 'software.amazon.awscdk',
     mavenArtifactId: `cdk-lambda-layer-kubectl-v${SPEC_VERSION}`,
-    mavenEndpoint: 'https://aws.oss.sonatype.org',
+    mavenServerId: 'central-ossrh',
   },
   publishToNuget: {
     dotNetNamespace: `Amazon.CDK.LambdaLayer.KubectlV${SPEC_VERSION}`,
