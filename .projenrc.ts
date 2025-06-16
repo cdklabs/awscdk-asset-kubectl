@@ -7,6 +7,22 @@ const SPEC_VERSION = '33';
 const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
+// v20 must be support because aws-cdk-lib depends on it
+const V20_BRANCH_MUST_BE_SUPPORTED = 'kubectl-v20/main';
+const CURRENT_BRANCH = `kubectl-v${SPEC_VERSION}/main`;
+
+// Define supported branches for reuse across the configuration
+const SUPPORTED_BRANCHES = [
+  V20_BRANCH_MUST_BE_SUPPORTED,
+  CURRENT_BRANCH,
+  `kubectl-v${Number(SPEC_VERSION)-1}/main`,
+  `kubectl-v${Number(SPEC_VERSION)-2}/main`,
+];
+
+// Get backport target branches (supported branches excluding v20 and current version)
+const BACKPORT_TARGET_BRANCHES = SUPPORTED_BRANCHES
+  .filter(branch => !(branch == V20_BRANCH_MUST_BE_SUPPORTED || branch === CURRENT_BRANCH));
+
 const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
@@ -25,12 +41,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // We also need to keep supporting v20 since it is a hard dependency of aws-cdk-lib
   depsUpgradeOptions: {
     workflowOptions: {
-      branches: [
-        'kubectl-v20/main', // this must be supported because aws-cdk-lib depends on it
-        `kubectl-v${SPEC_VERSION}/main`,
-        `kubectl-v${Number(SPEC_VERSION)-1}/main`,
-        `kubectl-v${Number(SPEC_VERSION)-2}/main`,
-      ],
+      branches: SUPPORTED_BRANCHES,
       labels: ['auto-approve'],
     },
   },
@@ -67,14 +78,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
   githubOptions: {
     mergifyOptions: {
       rules: [{
-        name: 'backport patches to kubectl-v21+ branches',
+        name: 'backport patches to supported branches',
         conditions: [
-          'label=backport-to-kubectl-v21+',
-          `base=kubectl-v${SPEC_VERSION}/main`,
+          'label=backport-to-supported-branches',
+          `base=${CURRENT_BRANCH}`, // Current version branch
         ],
         actions: {
           backport: {
-            regexes: [`kubectl-v(?!20|${SPEC_VERSION})[\\d]*\\/main`],
+            branches: BACKPORT_TARGET_BRANCHES,
             labels: ['auto-approve'],
           },
         },
