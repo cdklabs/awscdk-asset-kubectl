@@ -89,7 +89,7 @@ branch called `kubectl.vY`in the corresponding go binding repository, [`cdklabs/
 This repository consists of multiple branches, with each branch corresponding to a specific Kubectl version.
 For example, `kubectl-v24/main` is the branch that releases a Lambda Layer that bundles Kubectl version 1.24.
 Sometimes, a contribution made to a specific branch should be propogated to other branches in this repository as well.
-To do this, you can add `backport-to-kubectl-v21+` as a label to the PR that tells Mergify to backport when the PR is merged.
+To do this, you can add `backport-to-supported-branches` as a label to the PR that tells Mergify to backport when the PR is merged.
 This will backport to all versions of kubectl except kubectl v1.20, which is special and does not expose a Lambda Layer.
 
 If you think you need to backport to a specific subset of branches instead, you can ask a maintainer to backport via
