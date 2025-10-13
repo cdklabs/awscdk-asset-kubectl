@@ -21,7 +21,7 @@ Usage:
 
 ```ts
 // KubectlLayer bundles the 'kubectl' and 'helm' command lines
-import { KubectlV34Layer } from '@aws-cdk/lambda-layer-kubectl-v32';
+import { KubectlV34Layer } from '@aws-cdk/lambda-layer-kubectl-v34';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 declare const fn: lambda.Function;
