@@ -23,7 +23,7 @@ const layer = new lambda.LayerVersion(stack, 'KubectlLayer', {
 
 const runtimes = [
   lambda.Runtime.PYTHON_3_9,
-  lambda.Runtime.PYTHON_3_12,
+  lambda.Runtime.PYTHON_3_10,
 ];
 
 for (const runtime of runtimes) {
