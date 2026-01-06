@@ -37,7 +37,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     javaPackage: `software.amazon.awscdk.cdk.asset.kubectl.v${SPEC_VERSION}`,
     mavenGroupId: 'software.amazon.awscdk',
     mavenArtifactId: `cdk-asset-kubectl-v${SPEC_VERSION}`,
-    mavenEndpoint: 'https://aws.oss.sonatype.org',
   },
   publishToNuget: {
     dotNetNamespace: `Amazon.CDK.Asset.KubectlV${SPEC_VERSION}`,
