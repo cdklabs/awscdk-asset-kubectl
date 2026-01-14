@@ -880,9 +880,9 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*", "@types/node@ts5.5":
-  version "25.0.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-25.0.6.tgz#5ca3c46f2b256b59128f433426e42d464765dab1"
-  integrity sha512-NNu0sjyNxpoiW3YuVFfNz7mxSQ+S4X2G28uqg2s+CzoqoQjLPsWSbsFFyztIAqt2vb8kfEAsJNepMGPTxFDx3Q==
+  version "25.0.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-25.0.8.tgz#e54e00f94fe1db2497b3e42d292b8376a2678c8d"
+  integrity sha512-powIePYMmC3ibL0UJ2i2s0WIbq6cg6UyVFQxSCpaPxxzAaziRfimGivjdF943sSGV6RADVbk0Nvlm5P/FB44Zg==
   dependencies:
     undici-types "~7.16.0"
 
@@ -5636,9 +5636,9 @@ typescript@5.5.x, typescript@~5.5:
   integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
 
 typescript@next:
-  version "6.0.0-dev.20260112"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20260112.tgz#5a17c542972695cf975b1fbad753ca36a36cfc9f"
-  integrity sha512-2zxfhRUtvj6VgDvayl9Lc/bpH1Lx/TvnrI9rajmbT3ulhR2Mr6ACxnIfsaGI5JlTXa6Zk/BSFccXTRDT6H61Cw==
+  version "6.0.0-dev.20260113"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20260113.tgz#d96ee56563ee2352fdf68df10b7cb69fbe28ebe8"
+  integrity sha512-frXm5LJtstQlM511cGZLCalQjX5YUdUhvNSQAEcI4EuHoflAaqvCa2KIzPKNbyH3KmFPjA3EOs9FphTSKNc4CQ==
 
 uglify-js@^3.1.4:
   version "3.19.3"
