@@ -1373,11 +1373,9 @@ aws-cdk-lib@^2.0.0:
     yaml "1.10.2"
 
 aws-cdk@^2:
-  version "2.1102.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1102.0.tgz#c8c7875e34a231f6940980289770cb963e0920c1"
-  integrity sha512-M/TeLiZERo88hB7FIbT+LyzKQBQuxiGW34oSSfy9+rYTuGwJrO9z6ZZrBNO8/jODT2iR7z0pa3CPsdUVC71oOw==
-  optionalDependencies:
-    fsevents "2.3.2"
+  version "2.1103.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1103.0.tgz#6f7d331920faae4c03e348cb6a48bac47de3bfe0"
+  integrity sha512-bxEcqIeAT983x7525gf4Ya4zgpDt3Ou54El7j1ITCa/KqJ8ZaOP4F0ZHiiGuCbZduMcGJlszIXkaPJuvyNADgg==
 
 babel-jest@^27.5.1:
   version "27.5.1"
@@ -2679,11 +2677,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
-  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 fsevents@^2.3.2:
   version "2.3.3"
@@ -5636,9 +5629,9 @@ typescript@5.5.x, typescript@~5.5:
   integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
 
 typescript@next:
-  version "6.0.0-dev.20260124"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20260124.tgz#cdd2de27f9fce81fd096d6b0b247aaa1629d908d"
-  integrity sha512-qmb9C4EK0HH0OfT00228Tw53HVbxsmt0aJA5KZ31uALi8XDkPr8nsw1bJjHos+vthZKiHwb5k545wHc0zDevxg==
+  version "6.0.0-dev.20260125"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20260125.tgz#614a6e2d8e2f08621ec21431c6d0d29db18e7140"
+  integrity sha512-rgckI0J6d+bIdDkTubx75LIJn1TWBVK5kC3i5N6Jo1CRZ7OEXnFcN3pIIEAHAJ2ruIMR1vr504Df2mZmsWLj5A==
 
 uglify-js@^3.1.4:
   version "3.19.3"
