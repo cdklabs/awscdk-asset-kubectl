@@ -1353,9 +1353,9 @@ available-typed-arrays@^1.0.7:
     possible-typed-array-names "^1.0.0"
 
 aws-cdk-lib@^2.0.0:
-  version "2.237.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.237.0.tgz#2d3e71c91b660f0647c7e344bb4b85d11e0c6771"
-  integrity sha512-uFQ9OKL1jDYguIA9ZniOsvnUt+CZSSXqVec9XP7SjDR5Mys19VsSiMTChBrTywoWDxdjdiVfYE0bmaH2nzV7Cg==
+  version "2.237.1"
+  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.237.1.tgz#d74bc840a781d6bdd8cf34d275fb94a4323779ba"
+  integrity sha512-RH8mWHLBtc14stkeUF0gFLaWdS5iS2AHUHnoT5B5LLZfEkYP9G43LjJs0AMmpdlQ5/ZQVvCZ+VB83Q9vLxILRw==
   dependencies:
     "@aws-cdk/asset-awscli-v1" "2.2.263"
     "@aws-cdk/asset-node-proxy-agent-v6" "^2.1.0"
@@ -2142,9 +2142,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.263:
-  version "1.5.283"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.283.tgz#51d492c37c2d845a0dccb113fe594880c8616de8"
-  integrity sha512-3vifjt1HgrGW/h76UEeny+adYApveS9dH2h3p57JYzBSXJIKUJAvtmIytDKjcSCt9xHfrNCFJ7gts6vkhuq++w==
+  version "1.5.286"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.286.tgz#142be1ab5e1cd5044954db0e5898f60a4960384e"
+  integrity sha512-9tfDXhJ4RKFNerfjdCcZfufu49vg620741MNs26a9+bhLThdB+plgMeou98CAaHu/WATj2iHOOHTp1hWtABj2A==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5629,9 +5629,9 @@ typescript@5.5.x, typescript@~5.5:
   integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
 
 typescript@next:
-  version "6.0.0-dev.20260202"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20260202.tgz#fc2b9225699401849d944bf4d69d7192cc394aee"
-  integrity sha512-wH04zwLFImu84DlwZH0egQXLzDTMPXeA3eQpaZo2NmH07Nzepl2hNCPZWmaVCoqMl/M0CF5a6aX1hWAC0TRZSg==
+  version "6.0.0-dev.20260203"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20260203.tgz#7229c9d326bf39ff67ce5ea0b3569224432057cf"
+  integrity sha512-uurwjqOjUaUI30dLNR/ujGLEVI5Q1sY1RSmvmWf4lQXZMzqMnrcOK7uoFsRC2G4skJYSxkctGlSa9ZY6+ur2cQ==
 
 uglify-js@^3.1.4:
   version "3.19.3"
