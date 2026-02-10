@@ -21,12 +21,12 @@ pull_request_rules:
   - name: backport patches to supported branches
     conditions:
       - label=backport-to-supported-branches
-      - base=kubectl-v34/main
+      - base=kubectl-v35/main
     actions:
       backport:
         branches:
+          - kubectl-v34/main
           - kubectl-v33/main
-          - kubectl-v32/main
         labels:
           - auto-approve
   - name: Automatic merge on approval and successful build
