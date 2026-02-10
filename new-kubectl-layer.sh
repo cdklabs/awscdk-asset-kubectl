@@ -63,13 +63,13 @@ patterns=(
 
 # Update .projenrc.ts
 echo "Updating .projenrc.ts..."
-sed -i "s/SPEC_VERSION = '$PREV_KUBECTL_VERSION'/SPEC_VERSION = '$1'/" .projenrc.ts
+sed -i "" "s/SPEC_VERSION = '$PREV_KUBECTL_VERSION'/SPEC_VERSION = '$1'/" .projenrc.ts
 
 # Update the other files
 for file in "${files[@]}"; do
   echo "Updating $file..."
   for pattern in "${patterns[@]}"; do
-    sed -i "$pattern" "$file"
+    sed -i "" "$pattern" "$file"
   done
 done
 
