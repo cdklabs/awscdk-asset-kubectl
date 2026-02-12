@@ -9,6 +9,15 @@
 /.github/workflows/build.yml linguist-generated
 /.github/workflows/pull-request-lint.yml linguist-generated
 /.github/workflows/release-kubectl-v35.yml linguist-generated
+/.github/workflows/retry-automerge.yml linguist-generated
+/.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v20-main.yml linguist-generated
+/.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v33-main.yml linguist-generated
+/.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v34-main.yml linguist-generated
+/.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v35-main.yml linguist-generated
+/.github/workflows/upgrade-dev-deps-kubectl-v20-main.yml linguist-generated
+/.github/workflows/upgrade-dev-deps-kubectl-v33-main.yml linguist-generated
+/.github/workflows/upgrade-dev-deps-kubectl-v34-main.yml linguist-generated
+/.github/workflows/upgrade-dev-deps-kubectl-v35-main.yml linguist-generated
 /.github/workflows/upgrade-kubectl-v20-main.yml linguist-generated
 /.github/workflows/upgrade-kubectl-v33-main.yml linguist-generated
 /.github/workflows/upgrade-kubectl-v34-main.yml linguist-generated
