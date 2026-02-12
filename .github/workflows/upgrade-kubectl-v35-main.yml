@@ -4,7 +4,7 @@ name: upgrade-kubectl-v35-main
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 18 * * 1
 jobs:
   upgrade:
     name: Upgrade
@@ -69,7 +69,7 @@ jobs:
         with:
           token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
           commit-message: |-
-            chore(deps): upgrade dependencies
+            fix(deps): upgrade dependencies
 
             Upgrades project dependencies. See details in [workflow run].
 
@@ -79,7 +79,7 @@ jobs:
 
             *Automatically created by projen via the "upgrade-kubectl-v35-main" workflow*
           branch: github-actions/upgrade-kubectl-v35-main
-          title: "chore(deps): upgrade dependencies"
+          title: "fix(deps): upgrade dependencies"
           labels: auto-approve
           body: |-
             Upgrades project dependencies. See details in [workflow run].
