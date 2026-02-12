@@ -47,7 +47,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   majorVersion: 2,
   npmAccess: NpmAccess.PUBLIC,
-  npmProvenance: true,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
   // If we don't do this we release the devDependency updates that happen every day, which blows out
