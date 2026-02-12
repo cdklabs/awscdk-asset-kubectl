@@ -47,6 +47,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   majorVersion: 2,
   npmAccess: NpmAccess.PUBLIC,
+  npmTrustedPublishing: true,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
   // If we don't do this we release the devDependency updates that happen every day, which blows out
@@ -56,6 +57,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   publishToPypi: {
     distName: `aws-cdk.lambda-layer-kubectl-v${SPEC_VERSION}`,
     module: `aws_cdk.lambda_layer_kubectl_v${SPEC_VERSION}`,
+    trustedPublishing: true,
   },
   publishToMaven: {
     javaPackage: `software.amazon.awscdk.cdk.lambdalayer.kubectl.v${SPEC_VERSION}`,
