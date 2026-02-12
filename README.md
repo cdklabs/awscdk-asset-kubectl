@@ -1,4 +1,4 @@
-# Lambda Layer with KubeCtl v1.34
+# Lambda Layer with KubeCtl v1.35
 <!--BEGIN STABILITY BANNER-->
 
 ---
@@ -14,7 +14,7 @@ bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) a
 [`helm`](https://helm.sh/) command line.
 
 > - Helm Version: 3.19.0
-> - Kubectl Version: 1.34.0
+> - Kubectl Version: 1.35.0
 >
 
 Usage:
