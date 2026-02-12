@@ -1,6 +1,5 @@
-import { Gitpod, DevEnvironmentDockerImage, ReleasableCommits } from 'projen';
-import { javascript } from 'projen';
 import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
+import { Gitpod, DevEnvironmentDockerImage, ReleasableCommits, javascript } from 'projen';
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
 // the version of k8s this branch supports
