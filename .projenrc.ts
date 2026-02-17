@@ -60,9 +60,9 @@ const project = new CdklabsConstructLibrary({
 // We only need aws-cdk-lib and constructs for testing. Neither library is used
 // in the public API.
 project.deps.removeDependency('constructs', DependencyType.PEER);
-project.deps.addDependency('constructs@^10.0.5', DependencyType.DEVENV);
+project.deps.addDependency('constructs@^10.0.5', DependencyType.BUILD);
 project.deps.removeDependency('aws-cdk-lib', DependencyType.PEER);
-project.deps.addDependency('aws-cdk-lib@^2.0.0', DependencyType.DEVENV);
+project.deps.addDependency('aws-cdk-lib@^2.0.0', DependencyType.BUILD);
 
 project.preCompileTask.exec('layer/build.sh');
 
