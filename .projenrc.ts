@@ -36,6 +36,7 @@ const project = new CdklabsConstructLibrary({
   private: false,
   setNodeEngineVersion: false,
   npmAccess: javascript.NpmAccess.PUBLIC,
+  stability: 'stable',
   autoApproveOptions: {
     allowedUsernames: ['aws-cdk-automation', 'mergify[bot]'],
     secret: 'GITHUB_TOKEN',
