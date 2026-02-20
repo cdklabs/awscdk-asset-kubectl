@@ -1,5 +1,5 @@
-import { awscdk, Gitpod, DevEnvironmentDockerImage, ReleasableCommits } from 'projen';
-import { NpmAccess } from 'projen/lib/javascript';
+import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
+import { Gitpod, DevEnvironmentDockerImage, ReleasableCommits, javascript } from 'projen';
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
 // the version of k8s this branch supports
@@ -23,15 +23,20 @@ const SUPPORTED_BRANCHES = [
 const BACKPORT_TARGET_BRANCHES = SUPPORTED_BRANCHES
   .filter(branch => !(branch == V20_BRANCH_MUST_BE_SUPPORTED || branch === CURRENT_BRANCH));
 
-const project = new awscdk.AwsCdkConstructLibrary({
+const project = new CdklabsConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
   cdkVersion: '2.94.0',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
+  packageName: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
   repositoryUrl: 'https://github.com/cdklabs/awscdk-asset-kubectl.git',
   homepage: 'https://github.com/cdklabs/awscdk-asset-kubectl#readme',
+  private: false,
+  setNodeEngineVersion: false,
+  npmAccess: javascript.NpmAccess.PUBLIC,
+  stability: 'stable',
   autoApproveOptions: {
     allowedUsernames: ['aws-cdk-automation', 'mergify[bot]'],
     secret: 'GITHUB_TOKEN',
@@ -46,7 +51,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   majorVersion: 2,
-  npmAccess: NpmAccess.PUBLIC,
   releaseTagPrefix: `kubectl-v${SPEC_VERSION}`,
   releaseWorkflowName: releaseWorkflowName,
   // If we don't do this we release the devDependency updates that happen every day, which blows out
@@ -66,6 +70,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   publishToNuget: {
     dotNetNamespace: `Amazon.CDK.LambdaLayer.KubectlV${SPEC_VERSION}`,
     packageId: `Amazon.CDK.LambdaLayer.KubectlV${SPEC_VERSION}`,
+    trustedPublishing: false,
   },
   publishToGo: {
     moduleName: 'github.com/cdklabs/awscdk-kubectl-go',
