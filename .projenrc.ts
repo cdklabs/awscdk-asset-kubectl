@@ -58,11 +58,18 @@ const project = new CdklabsConstructLibrary({
 });
 
 // We only need aws-cdk-lib and constructs for testing. Neither library is used
-// in the public API.
+// in the public API. Remove peer deps and use DEVENV with ranges so that:
+// 1. jsii 5.5.x doesn't try to load the aws-cdk-lib assembly (which requires newer jsii)
+// 2. Tests can use newer CDK features (e.g. Runtime.PYTHON_3_10)
 project.deps.removeDependency('constructs', DependencyType.PEER);
 project.deps.addDependency('constructs@^10.0.5', DependencyType.DEVENV);
 project.deps.removeDependency('aws-cdk-lib', DependencyType.PEER);
 project.deps.addDependency('aws-cdk-lib@^2.0.0', DependencyType.DEVENV);
+
+// CdklabsConstructLibrary adds rosetta:extract to post-compile by default,
+// but without peer deps in the jsii assembly rosetta can't resolve types.
+// The original AwsCdkConstructLibrary config did not run rosetta, so remove it.
+project.postCompileTask.removeStep(1);
 
 project.preCompileTask.exec('layer/build.sh');
 

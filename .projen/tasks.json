@@ -333,9 +333,6 @@
       "steps": [
         {
           "spawn": "docgen"
-        },
-        {
-          "spawn": "rosetta:extract"
         }
       ]
     },
