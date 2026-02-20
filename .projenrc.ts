@@ -1,5 +1,5 @@
 import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
-import { javascript, ReleasableCommits } from 'projen';
+import { DependencyType, javascript, ReleasableCommits } from 'projen';
 
 // the version of k8s this branch supports
 const SPEC_VERSION = '20';
@@ -56,6 +56,13 @@ const project = new CdklabsConstructLibrary({
     githubTokenSecret: 'PROJEN_GITHUB_TOKEN',
   },
 });
+
+// We only need aws-cdk-lib and constructs for testing. Neither library is used
+// in the public API.
+project.deps.removeDependency('constructs', DependencyType.PEER);
+project.deps.addDependency('constructs@^10.0.5', DependencyType.DEVENV);
+project.deps.removeDependency('aws-cdk-lib', DependencyType.PEER);
+project.deps.addDependency('aws-cdk-lib@^2.0.0', DependencyType.DEVENV);
 
 project.preCompileTask.exec('layer/build.sh');
 
