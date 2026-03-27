@@ -176,7 +176,7 @@
           "exec": "cdk synth --app \"ts-node -P tsconfig.dev.json test/kubectl-asset.integ.ts\" --no-notices --no-version-reporting --no-asset-metadata --no-path-metadata -o test/.tmp/kubectl-asset.integ/assert.cdk.out > /dev/null"
         },
         {
-          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json test/kubectl-asset.integ.snapshot/ test/.tmp/kubectl-asset.integ/assert.cdk.out/"
+          "exec": "diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json -x \"*.metadata.json\" test/kubectl-asset.integ.snapshot/ test/.tmp/kubectl-asset.integ/assert.cdk.out/"
         }
       ]
     },

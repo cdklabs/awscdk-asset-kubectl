@@ -74,4 +74,12 @@ project.postCompileTask.removeStep(1);
 
 project.preCompileTask.exec('layer/build.sh');
 
+// cloud-assembly-schema v52+ emits a metadata.json that contains machine-specific
+// stack traces, causing snapshot diffs across environments. Exclude it from the
+// integ test assertion diff (like manifest.json and tree.json).
+const assertTask = project.tasks.tryFind('integ:kubectl-asset:assert')!;
+assertTask.removeStep(2);
+assertTask.exec('diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json -x "*.metadata.json" test/kubectl-asset.integ.snapshot/ test/.tmp/kubectl-asset.integ/assert.cdk.out/');
+project.addGitIgnore('test/kubectl-asset.integ.snapshot/*.metadata.json');
+
 project.synth();

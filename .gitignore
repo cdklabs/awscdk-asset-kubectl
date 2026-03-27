@@ -64,4 +64,5 @@ test/kubectl-asset.integ.snapshot/**/tree.json
 !/.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v20-main.yml
 !/.github/workflows/upgrade-kubectl-v20-main.yml
 !/.github/workflows/upgrade-dev-deps-kubectl-v20-main.yml
+test/kubectl-asset.integ.snapshot/*.metadata.json
 !/.projenrc.ts
