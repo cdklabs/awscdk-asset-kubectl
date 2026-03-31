@@ -27,7 +27,7 @@ const project = new CdklabsConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
-  cdkVersion: '2.94.0',
+  cdkVersion: '2.224.0',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   packageName: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
