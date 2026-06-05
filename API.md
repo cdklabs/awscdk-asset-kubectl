@@ -38,6 +38,7 @@ new KubectlV32Layer(scope: Construct, id: string)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.addPermission">addPermission</a></code> | Add permission for this layer version to specific entities. |
 
@@ -50,6 +51,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.applyRemovalPolicy"></a>
 
@@ -245,9 +267,10 @@ the properties of the imported layer.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.layerVersionArn">layerVersionArn</a></code> | <code>string</code> | The ARN of the Lambda Layer version that this Layer defines. |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.layerVersionRef">layerVersionRef</a></code> | <code>aws-cdk-lib.interfaces.aws_lambda.LayerVersionReference</code> | A reference to a LayerVersion resource. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.compatibleRuntimes">compatibleRuntimes</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime[]</code> | The runtimes compatible with this Layer. |
 
 ---
@@ -270,16 +293,17 @@ The tree node.
 public readonly env: ResourceEnvironment;
 ```
 
-- *Type:* aws-cdk-lib.ResourceEnvironment
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 The environment this resource belongs to.
 
-For resources that are created and managed by the CDK
-(generally, those created by creating new class instances like Role, Bucket, etc.),
-this is always the same as the environment of the stack they belong to;
-however, for imported resources
-(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
-that might be different than the stack they were imported into.
+For resources that are created and managed in a Stack (those created by
+creating new class instances like `new Role()`, `new Bucket()`, etc.), this
+is always the same as the environment of the stack they belong to.
+
+For referenced resources (those obtained from referencing methods like
+`Role.fromRoleArn()`, `Bucket.fromBucketName()`, etc.), they might be
+different than the stack they were imported into.
 
 ---
 
@@ -307,6 +331,18 @@ The ARN of the Lambda Layer version that this Layer defines.
 
 ---
 
+##### `layerVersionRef`<sup>Required</sup> <a name="layerVersionRef" id="@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.layerVersionRef"></a>
+
+```typescript
+public readonly layerVersionRef: LayerVersionReference;
+```
+
+- *Type:* aws-cdk-lib.interfaces.aws_lambda.LayerVersionReference
+
+A reference to a LayerVersion resource.
+
+---
+
 ##### `compatibleRuntimes`<sup>Optional</sup> <a name="compatibleRuntimes" id="@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.compatibleRuntimes"></a>
 
 ```typescript
@@ -319,6 +355,25 @@ The runtimes compatible with this Layer.
 
 ---
 
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.PROPERTY_INJECTION_ID">PROPERTY_INJECTION_ID</a></code> | <code>string</code> | Uniquely identifies this class. |
+
+---
+
+##### `PROPERTY_INJECTION_ID`<sup>Required</sup> <a name="PROPERTY_INJECTION_ID" id="@aws-cdk/lambda-layer-kubectl-v32.KubectlV32Layer.property.PROPERTY_INJECTION_ID"></a>
+
+```typescript
+public readonly PROPERTY_INJECTION_ID: string;
+```
+
+- *Type:* string
+
+Uniquely identifies this class.
+
+---
 
 
 

@@ -1,5 +1,5 @@
 # base lambda image
-FROM public.ecr.aws/lambda/provided:latest
+FROM amazonlinux:2023
 
 #
 # versions
