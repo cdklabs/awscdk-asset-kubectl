@@ -9,6 +9,8 @@
 
 <!--END STABILITY BANNER-->
 
+> **⚠️ DEPRECATED**: This package is no longer supported. Only the latest 3 minor versions of `@aws-cdk/asset-kubectl-v*` are actively maintained. Please migrate to a supported version. See [CONTRIBUTING.md](https://github.com/cdklabs/awscdk-asset-kubectl/blob/kubectl-v35/main/CONTRIBUTING.md) for the support policy.
+
 This module bundles the
 [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line as a local asset. It exposes constants
