@@ -9,6 +9,8 @@
 
 <!--END STABILITY BANNER-->
 
+> **⚠️ DEPRECATED**: This package is no longer supported. Only the latest 3 minor versions of `@aws-cdk/asset-kubectl-v*` are actively maintained. Please migrate to a supported version. See [CONTRIBUTING.md](https://github.com/cdklabs/awscdk-asset-kubectl/blob/kubectl-v32/main/CONTRIBUTING.md) for the support policy.
+
 This module exports a single class called `KubectlV32Layer` which is a `lambda.LayerVersion` that
 bundles the [`kubectl`](https://kubernetes.io/docs/reference/kubectl/kubectl/) and the
 [`helm`](https://helm.sh/) command line.
