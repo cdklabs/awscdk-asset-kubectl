@@ -3,7 +3,7 @@ import { Gitpod, DevEnvironmentDockerImage, ReleasableCommits, javascript } from
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
 // the version of k8s this branch supports
-const SPEC_VERSION = '35';
+const SPEC_VERSION = '36';
 const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
@@ -27,7 +27,8 @@ const project = new CdklabsConstructLibrary({
   projenrcTs: true,
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
-  cdkVersion: '2.224.0',
+  cdkVersion: '2.260.0',
+  constructsVersion: '10.5.0',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   packageName: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
