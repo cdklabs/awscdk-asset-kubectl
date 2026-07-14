@@ -1,4 +1,4 @@
-# Lambda Layer with KubeCtl v1.35
+# Lambda Layer with KubeCtl v1.36
 <!--BEGIN STABILITY BANNER-->
 
 ---
