@@ -1,0 +1,384 @@
+{
+  "/lambda-layer-kubectl-integ-stack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:13:15)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/KubectlLayer/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "KubectlLayer600207B5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new LayerVersion2 in aws-cdk-lib...",
+        "new KubectlV36Layer (/Users/aemada/awscdk-asset-kubectl/src/kubectl-layer.ts:10:5)",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:14:15)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.8/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython38588938B9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/CustomResourcepython3.8/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomResourcepython38"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new CustomResource2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:35:3)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.9/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython39426A0480"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/CustomResourcepython3.9/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomResourcepython39"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new CustomResource2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:35:3)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.10/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython310815BD7E9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/CustomResourcepython3.10/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomResourcepython310"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new CustomResource2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:35:3)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.11/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython311020B8AC7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/CustomResourcepython3.11/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomResourcepython311"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new CustomResource2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:35:3)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.8/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython38ServiceRoleCF609288"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.8/framework-onEvent/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython38frameworkonEvent3059CDF1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.9/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython39ServiceRoleE2CFED77"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.9/framework-onEvent/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython39frameworkonEvent00AFA742"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.10/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython310ServiceRoleD185E0B6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.10/framework-onEvent/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython310frameworkonEvent7294D715"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Lambda$python3.11/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Lambdapython311ServiceRoleB063EF97"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:25:21)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.11/framework-onEvent/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython311frameworkonEvent29915103"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.8/framework-onEvent/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython38frameworkonEventServiceRole59CE2CA7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.9/framework-onEvent/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython39frameworkonEventServiceRoleA299F5C1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.10/framework-onEvent/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython310frameworkonEventServiceRoleB6DF2879"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.11/framework-onEvent/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython311frameworkonEventServiceRoleAEC610C5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Provider2 in aws-cdk-lib...",
+        "<anonymous> (/Users/aemada/awscdk-asset-kubectl/test/kubectl-layer.integ.ts:24:20)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.8/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython38frameworkonEventServiceRoleDefaultPolicy1666A4D6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.9/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython39frameworkonEventServiceRoleDefaultPolicy16A4767C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.10/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython310frameworkonEventServiceRoleDefaultPolicyC0E8697B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/lambda-layer-kubectl-integ-stack/Providerpython3.11/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Providerpython311frameworkonEventServiceRoleDefaultPolicyF13D93DB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}
