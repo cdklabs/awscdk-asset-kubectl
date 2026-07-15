@@ -38,8 +38,6 @@ new KubectlV36Layer(scope: Construct, id: string)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.with">with</a></code> | Applies one or more mixins to this construct. |
-| <code><a href="#@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Override the cross-stack reference strength for this resource. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.addPermission">addPermission</a></code> | Add permission for this layer version to specific entities. |
 
@@ -52,47 +50,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `with` <a name="with" id="@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.with"></a>
-
-```typescript
-public with(mixins: ...IMixin[]): IConstruct
-```
-
-Applies one or more mixins to this construct.
-
-Mixins are applied in order. The list of constructs is captured at the
-start of the call, so constructs added by a mixin will not be visited.
-Use multiple `with()` calls if subsequent mixins should apply to added
-constructs.
-
-###### `mixins`<sup>Required</sup> <a name="mixins" id="@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.with.parameter.mixins"></a>
-
-- *Type:* ...constructs.IMixin[]
-
----
-
-##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.applyCrossStackReferenceStrength"></a>
-
-```typescript
-public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
-```
-
-Override the cross-stack reference strength for this resource.
-
-When set, any cross-stack reference to this resource will use the specified
-mechanism instead of the global default determined by the
-`@aws-cdk/core:defaultCrossStackReferences` context key. This is useful for
-selectively weakening specific references to avoid the "deadly embrace" problem
-without changing the app-wide default.
-
-###### `strength`<sup>Required</sup> <a name="strength" id="@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.applyCrossStackReferenceStrength.parameter.strength"></a>
-
-- *Type:* aws-cdk-lib.ReferenceStrength
-
-The reference strength to use for this resource.
-
----
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@aws-cdk/lambda-layer-kubectl-v36.KubectlV36Layer.applyRemovalPolicy"></a>
 
