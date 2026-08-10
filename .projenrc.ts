@@ -77,9 +77,15 @@ project.preCompileTask.exec('layer/build.sh');
 // cloud-assembly-schema v52+ emits a metadata.json that contains machine-specific
 // stack traces, causing snapshot diffs across environments. Exclude it from the
 // integ test assertion diff (like manifest.json and tree.json).
+//
+// Similarly, aws-cdk-lib 2.263+ runs the built-in "CloudFormation Validate" plugin
+// during synth and writes a validation-report.json into the cloud assembly. That
+// report embeds machine-specific absolute stack-trace paths, so it also causes
+// snapshot diffs across environments and must be excluded and gitignored too.
 const assertTask = project.tasks.tryFind('integ:kubectl-asset:assert')!;
 assertTask.removeStep(2);
-assertTask.exec('diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json -x "*.metadata.json" test/kubectl-asset.integ.snapshot/ test/.tmp/kubectl-asset.integ/assert.cdk.out/');
+assertTask.exec('diff -r -x asset.* -x cdk.out -x manifest.json -x tree.json -x "*.metadata.json" -x validation-report.json test/kubectl-asset.integ.snapshot/ test/.tmp/kubectl-asset.integ/assert.cdk.out/');
 project.addGitIgnore('test/kubectl-asset.integ.snapshot/*.metadata.json');
+project.addGitIgnore('test/kubectl-asset.integ.snapshot/validation-report.json');
 
 project.synth();
