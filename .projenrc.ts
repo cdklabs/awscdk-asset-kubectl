@@ -3,7 +3,7 @@ import { Gitpod, DevEnvironmentDockerImage, ReleasableCommits, javascript } from
 import { WorkflowNoDockerPatch } from './projenrc/workflow-no-docker-patch';
 
 // the version of k8s this branch supports
-const SPEC_VERSION = '35';
+const SPEC_VERSION = '36';
 const releaseWorkflowName = `release-kubectl-v${SPEC_VERSION}`;
 const defaultReleaseBranchName = `kubectl-v${SPEC_VERSION}/main`;
 
