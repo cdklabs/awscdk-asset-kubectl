@@ -1,6 +1,6 @@
 {
-  "name": "@aws-cdk/lambda-layer-kubectl-v36",
-  "description": "A Lambda Layer that contains kubectl v1.36",
+  "name": "@aws-cdk/lambda-layer-kubectl-v37",
+  "description": "A Lambda Layer that contains kubectl v1.37",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/awscdk-asset-kubectl.git"
@@ -33,7 +33,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
-    "release:kubectl-v36/main": "npx projen release:kubectl-v36/main",
+    "release:kubectl-v37/main": "npx projen release:kubectl-v37/main",
     "rosetta:extract": "npx projen rosetta:extract",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
@@ -140,23 +140,23 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "software.amazon.awscdk.cdk.lambdalayer.kubectl.v36",
+        "package": "software.amazon.awscdk.cdk.lambdalayer.kubectl.v37",
         "maven": {
           "groupId": "software.amazon.awscdk",
-          "artifactId": "cdk-lambda-layer-kubectl-v36"
+          "artifactId": "cdk-lambda-layer-kubectl-v37"
         }
       },
       "python": {
-        "distName": "aws-cdk.lambda-layer-kubectl-v36",
-        "module": "aws_cdk.lambda_layer_kubectl_v36"
+        "distName": "aws-cdk.lambda-layer-kubectl-v37",
+        "module": "aws_cdk.lambda_layer_kubectl_v37"
       },
       "dotnet": {
-        "namespace": "Amazon.CDK.LambdaLayer.KubectlV36",
-        "packageId": "Amazon.CDK.LambdaLayer.KubectlV36"
+        "namespace": "Amazon.CDK.LambdaLayer.KubectlV37",
+        "packageId": "Amazon.CDK.LambdaLayer.KubectlV37"
       },
       "go": {
         "moduleName": "github.com/cdklabs/awscdk-kubectl-go",
-        "packageName": "kubectlv36"
+        "packageName": "kubectlv37"
       }
     },
     "tsc": {
