@@ -16,6 +16,25 @@ This means that we continue to upgrade dependencies for the most recent three ve
 We also plan to have the default branch of this repository to be the latest released version. If that is
 not the case, please raise a GitHub Issue with us!
 
+### Keeping kubectl and helm up to date
+
+The `update-tool-versions` workflow runs daily from the default branch and checks every supported
+branch except `kubectl-v20/main`. For each branch it runs `scripts/update-tool-versions.sh`, which picks:
+
+- kubectl: the latest patch of the branch's minor version, from `https://dl.k8s.io/release/stable-1.<minor>.txt`.
+- helm: the newest stable release of the same major version that supports that Kubernetes version. A helm
+  release supports the Kubernetes minor version its `go.mod` is built against (`k8s.io/client-go`) and the
+  three before it, per the helm [version skew policy](https://helm.sh/docs/topics/version_skew/).
+
+If either version changed, the workflow rebuilds the layer, updates the integ snapshot and opens a `fix:`
+pull request against that branch. A maintainer reviews and merges it, which releases a new patch version.
+
+You can run the script locally from the repository root to see what it would pick (it needs `gh` signed in):
+
+```shell
+./scripts/update-tool-versions.sh
+```
+
 ## Reporting Bugs/Feature Requests
 
 We welcome you to use the GitHub issue tracker to report bugs or suggest features.

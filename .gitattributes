@@ -10,6 +10,7 @@
 /.github/workflows/pull-request-lint.yml linguist-generated
 /.github/workflows/release-kubectl-v36.yml linguist-generated
 /.github/workflows/retry-automerge.yml linguist-generated
+/.github/workflows/update-tool-versions.yml linguist-generated
 /.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v20-main.yml linguist-generated
 /.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v34-main.yml linguist-generated
 /.github/workflows/upgrade-cdklabs-projen-project-types-kubectl-v35-main.yml linguist-generated
