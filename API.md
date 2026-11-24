@@ -4,6 +4,8 @@
 
 ### KubectlV35Layer <a name="KubectlV35Layer" id="@aws-cdk/lambda-layer-kubectl-v35.KubectlV35Layer"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, aws-cdk-lib.interfaces.IEnvironmentAware, aws-cdk-lib.aws_lambda.ILayerVersion, aws-cdk-lib.interfaces.aws_lambda.ILayerVersionRef
+
 A CDK Asset construct that contains `kubectl` and `helm`.
 
 #### Initializers <a name="Initializers" id="@aws-cdk/lambda-layer-kubectl-v35.KubectlV35Layer.Initializer"></a>

@@ -28,6 +28,10 @@ const project = new CdklabsConstructLibrary({
   author: 'Amazon Web Services',
   authorAddress: 'aws-cdk-dev@amazon.com',
   cdkVersion: '2.224.0',
+  // projen >= 0.100 defaults constructs to ^10.5.1. constructs 10.5 adds `with()`,
+  // which aws-cdk-go < 2.239.0 does not resolve, so the Go package stops compiling.
+  // Keep constructs in line with cdkVersion until cdkVersion is raised to >= 2.239.0.
+  constructsVersion: '10.0.5',
   name: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   packageName: `@aws-cdk/lambda-layer-kubectl-v${SPEC_VERSION}`,
   description: `A Lambda Layer that contains kubectl v1.${SPEC_VERSION}`,
